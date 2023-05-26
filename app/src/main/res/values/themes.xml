@@ -14,4 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textColor">@color/primary_500</item>
+        <!-- Tambahkan item lain yang diperlukan di sini -->
+    </style>
+
+
 </resources>
