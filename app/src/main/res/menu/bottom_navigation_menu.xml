@@ -1,27 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_home"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home" />
+        android:title="Home"
+        app:showAsAction="always" />
 
     <item
+        android:id="@+id/menu_pac"
         android:icon="@drawable/ic_baseline_shopping_bag_24"
-        android:title="pac" />
+        android:title="Package"
+        app:showAsAction="always" />
 
     <!-- Extra space for FAB -->
     <item
         android:enabled="false"
-        tools:ignore="MenuTitle" />
+        tools:ignore="MenuTitle"
+        app:showAsAction="always" />
 
     <item
+        android:id="@+id/menu_wishlist"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="Wishlist" />
+        android:title="Wishlist"
+        app:showAsAction="always" />
 
     <item
+        android:id="@+id/menu_profile"
         android:icon="@drawable/ic_baseline_person_24"
-        android:title="Profile" />
+        android:title="Profile"
+        app:showAsAction="always" />
 
 </menu>
