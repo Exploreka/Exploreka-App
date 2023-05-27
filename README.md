@@ -11,5 +11,5 @@ Login and Register
 
 OTP
 
-![image](https://github.com/Exploreka/Exploreka/assets/96515927/54a180f9-428b-4a87-9b9d-c7a9961e6140)
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/9c41d7c4-9e15-46d9-90fd-ec29d73e69df)
 
