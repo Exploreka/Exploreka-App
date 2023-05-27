@@ -9,7 +9,7 @@
 
     <item
         android:icon="@drawable/ic_baseline_shopping_bag_24"
-        android:title="Package" />
+        android:title="pac" />
 
     <!-- Extra space for FAB -->
     <item
