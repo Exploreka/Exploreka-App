@@ -5,7 +5,9 @@ Splash Screen
 
 Login and Register
 
-![image](https://github.com/Exploreka/Exploreka/assets/96515927/f1f892d6-ceb8-41ad-b224-1deac525539f)
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/40a47eee-934c-4f79-a289-e6599b933ada)
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/576e7161-92b3-4ef3-9f2c-83cf33f8e926)
+
 
 OTP
 
