@@ -25,12 +25,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Masuk Exploreka"
             android:layout_gravity="center"
+            android:text="Masuk Exploreka"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/poppins_medium"/>
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="17dp" />
 
         <ImageView
             android:id="@+id/help_button"
@@ -47,7 +48,7 @@
     <ImageView
         android:id="@+id/iv_login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:src="@drawable/iv_login"
         android:layout_marginTop="36dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -67,13 +68,19 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ed_email"
             android:layout_width="328dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:hint="Email"/>
+                android:hint="Email"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -81,13 +88,19 @@
             android:layout_width="328dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            app:endIconMode="password_toggle">
+            app:endIconMode="password_toggle"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="Kata Sandi"/>
+                android:hint="Kata Sandi"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -106,6 +119,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Ingat saya"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"
                 android:gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"/>
@@ -116,6 +131,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lupa Kata Sandi?"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"
                 android:padding="0dp"/>
 
         </LinearLayout>
@@ -125,12 +142,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="Login"/>
+            android:text="Login"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="16sp"
+            android:background="@drawable/bg_button_rounded"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Atau"
+            android:text="Atau masuk dengan"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="12sp"
             android:gravity="center"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"/>
@@ -147,8 +169,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Facebook"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="15sp"
                 android:layout_marginEnd="8dp"
-                app:icon="@drawable/ic_facebook"/>
+                app:icon="@drawable/ic_facebook"
+                app:cornerRadius="12dp"/>
 
             <Button
                 android:id="@+id/btn_google"
@@ -157,8 +182,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Google"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="15sp"
                 android:layout_marginStart="8dp"
-                app:icon="@drawable/ic_google"/>
+                app:icon="@drawable/ic_google"
+                app:cornerRadius="12dp"/>
         </LinearLayout>
         
         <LinearLayout
@@ -170,7 +198,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Belum punya akun? "/>
+                android:text="Belum punya akun? "
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"/>
 
             <Button
                 android:id="@+id/btn_mvRegister"
@@ -178,6 +208,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Daftar Sekarang"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"
                 android:padding="0dp"/>
         </LinearLayout>
 
