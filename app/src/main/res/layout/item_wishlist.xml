@@ -1,0 +1,70 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="340dp"
+    android:layout_height="80dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="10dp"
+    android:padding="8dp"
+    app:cardCornerRadius="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_wishlist"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/karimunjawa"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/text_wisata_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Karimun Jawa"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toEndOf="@id/image_wishlist"
+            app:layout_constraintEnd_toStartOf="@id/icon_favorite"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/text_wisata_price"
+            android:layout_marginStart="8dp"/>
+
+        <TextView
+            android:id="@+id/text_wisata_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Rp 250.000"
+            android:textSize="12sp"
+            android:textColor="#E86E14"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toEndOf="@id/image_wishlist"
+            app:layout_constraintEnd_toStartOf="@id/icon_favorite"
+            app:layout_constraintTop_toBottomOf="@id/text_wisata_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="8dp"/>
+
+        <ImageView
+            android:id="@+id/icon_favorite"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_baseline_favorite_24"
+            app:tint="@color/black"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            android:layout_marginStart="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

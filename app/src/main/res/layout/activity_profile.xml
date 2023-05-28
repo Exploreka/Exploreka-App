@@ -41,12 +41,11 @@
             android:padding="10dp"
             app:tint="@color/white" />
 
-
-
     </androidx.appcompat.widget.Toolbar>
 
     <include
         android:id="@+id/iv_profile"
+        style="@style/ButtonStyle"
         layout="@layout/item_profile"
         android:layout_width="320dp"
         android:layout_height="200dp"
