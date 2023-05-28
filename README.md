@@ -13,3 +13,14 @@ OTP
 
 ![image](https://github.com/Exploreka/Exploreka/assets/96515927/9c41d7c4-9e15-46d9-90fd-ec29d73e69df)
 
+Forget Password and Change Password
+
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/4feed3cf-e651-400a-97f9-390bd15bb1ae)
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/08219757-b2e5-4f3e-bc90-3b00c4e54225)
+
+Wishlist and Profile
+
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/86debcec-f1d0-47ba-ab0a-b4bce012f469)
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/e7d188e4-cb38-4fe2-9be5-c2664b340168)
+
+
