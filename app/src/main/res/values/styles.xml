@@ -5,6 +5,12 @@
         <item name="android:background">@drawable/rounded_button_white</item>
     </style>
 
+    <style name="ButtonStyle.Profile" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:tint">@color/black</item>
+        <item name="android:background">@drawable/rounded_button_white</item>
+    </style>
+
     <style name="FAB.WhiteText" parent="Widget.Design.FloatingActionButton">
         <item name="android:textColor">@color/primary_500</item>
         <item name="android:background">@drawable/rounded_fab</item>
