@@ -27,7 +27,6 @@
         style="@style/FAB.WhiteText"
         app:borderWidth="5dp"
         android:background="@drawable/rounded_fab"
-        app:borderColor="@color/grey2"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialComponents.LargeComponent"
         app:backgroundTint="@color/primary_500"
         android:src="@drawable/ic_baseline_explore_24"
