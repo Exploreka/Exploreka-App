@@ -1,0 +1,32 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.exploreka.app.MainActivity" />
+
+    <activity
+        android:id="@+id/wishlistActivity"
+        android:name="com.exploreka.app.WishlistActivity" />
+
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="com.exploreka.app.ProfileActivity" />
+
+    <!-- Definisikan activity lainnya sesuai kebutuhan Anda -->
+
+    <action
+        android:id="@+id/action_main"
+        app:destination="@id/mainActivity" />
+
+    <action
+        android:id="@+id/action_wishlist"
+        app:destination="@id/wishlistActivity" />
+
+    <action
+        android:id="@+id/action_profile"
+        app:destination="@id/profileActivity" />
+
+    <!-- Definisikan action lainnya sesuai kebutuhan Anda -->
+
+</navigation>

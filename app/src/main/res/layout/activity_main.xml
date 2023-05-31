@@ -5,8 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<<<<<<< Updated upstream
-=======
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -52,7 +50,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,7 +85,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
->>>>>>> Stashed changes
+    <SearchView
+        android:id="@+id/searchView"
+        android:theme="@style/SearchViewTheme"
+        android:layout_width="match_parent"
+        android:background="@color/primary_500"
+        android:layout_height="wrap_content"
+        android:queryHint="Search"
+        android:iconTint="@color/white"
+        app:iconTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/profile"
+        app:iconifiedByDefault="false" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"

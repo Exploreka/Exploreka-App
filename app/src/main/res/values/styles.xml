@@ -27,6 +27,14 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
+    <style name="SearchViewTheme">
+        <item name="android:textColorPrimary">@color/white</item> <!-- Warna teks pada SearchView -->
+        <item name="android:editTextColor">@color/white</item> <!-- Warna teks pada input SearchView -->
+        <item name="android:queryBackground">@color/primary_500</item> <!-- Warna latar belakang input SearchView -->
+
+    </style>
+
+
     <style name="FAB.WhiteText" parent="Widget.Design.FloatingActionButton">
         <item name="android:textColor">@color/primary_500</item>
         <item name="android:background">@drawable/rounded_fab</item>
