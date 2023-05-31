@@ -50,6 +50,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/searchview_background"
+        app:layout_constraintTop_toBottomOf="@id/profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:theme="@style/SearchViewTheme"
+            android:layout_width="match_parent"
+            android:background="@drawable/searchview_background"
+            android:layout_height="wrap_content"
+            android:queryHint="Search"
+            android:iconTint="@color/white"
+            app:iconTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/profile"
+            app:iconifiedByDefault="false" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="4"
+        tools:itemCount="8"
+        tools:listitem="@layout/item_categories"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <SearchView
         android:id="@+id/searchView"
