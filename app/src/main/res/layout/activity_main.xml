@@ -5,6 +5,90 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<<<<<<< Updated upstream
+=======
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_500"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/exploreka"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:src="@drawable/exploreka"
+            android:layout_gravity="start"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/notification_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_notifications_none_24"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/help_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_help_outline_24"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            app:tint="@color/white" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <include
+        android:id="@+id/profile"
+        style="@style/ButtonStyle"
+        layout="@layout/item_profil_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/searchview_background"
+        app:layout_constraintTop_toBottomOf="@id/profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:theme="@style/SearchViewTheme"
+            android:layout_width="match_parent"
+            android:background="@drawable/searchview_background"
+            android:layout_height="wrap_content"
+            android:queryHint="Search"
+            android:iconTint="@color/white"
+            app:iconTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/profile"
+            app:iconifiedByDefault="false" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="4"
+        tools:itemCount="8"
+        tools:listitem="@layout/item_categories"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+>>>>>>> Stashed changes
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
