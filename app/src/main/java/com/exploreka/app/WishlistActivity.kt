@@ -20,6 +20,11 @@ class WishlistActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
+                R.id.menu_package -> {
+                    val intent = Intent(this, PackageActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
                 R.id.menu_wishlist -> {
                     val intent = Intent(this, WishlistActivity::class.java)
                     startActivity(intent)
