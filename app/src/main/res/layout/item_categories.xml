@@ -6,8 +6,8 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         app:cardBackgroundColor="@color/primary_500"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:cardCornerRadius="8dp"
@@ -22,8 +22,8 @@
 
             <ImageView
                 android:id="@+id/categoryIconImageView"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_headphones_24"
                 app:tint="@color/white" />
         </LinearLayout>
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kategori"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:fontFamily="@font/poppins_light"
         android:textStyle="bold"
         android:textColor="@android:color/black"
