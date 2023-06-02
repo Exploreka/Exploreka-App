@@ -9,7 +9,7 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/menu_pac"
+        android:id="@+id/menu_package"
         android:icon="@drawable/ic_baseline_shopping_bag_24"
         android:title="Package"
         app:showAsAction="always" />
