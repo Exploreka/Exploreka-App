@@ -4,12 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+        val fab: FloatingActionButton = findViewById(R.id.floating_action_button)
+        fab.setOnClickListener {
+            val intent = Intent(this@ProfileActivity , NavigationActivity::class.java)
+            startActivity(intent)
+        }
         bottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigationView.selectedItemId = R.id.menu_profile
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
