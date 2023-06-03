@@ -12,4 +12,5 @@
     <color name="primary_500">#2180D9</color>
     <color name="primary_400">#4D99E1</color>
     <color name="transparan">#00FFFFFF</color>
+    <color name="red">#FF0000</color>
 </resources>
