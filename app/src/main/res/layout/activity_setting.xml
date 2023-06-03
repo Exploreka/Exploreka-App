@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".SettingActivity">
 
 
@@ -34,5 +35,169 @@
             android:fontFamily="@font/poppins_bold"/>
 
     </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/layout_setting_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_baseline_person_24"
+            android:contentDescription="Profile Icon"
+            app:tint="@color/primary_500" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Akun"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/primary_500"
+            android:paddingStart="8dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+  <TextView
+      android:id="@+id/btn_edit_profile"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Edit Profile"
+      android:layout_marginStart="1dp"
+      android:layout_marginTop="5dp"
+      android:fontFamily="@font/poppins"
+      android:textSize="16sp"
+      app:layout_constraintStart_toStartOf="@id/layout_setting_akun"
+      app:layout_constraintTop_toBottomOf="@id/layout_setting_akun"/>
+
+    <TextView
+        android:id="@+id/btn_ubah_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubah Password"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/btn_edit_profile"
+        app:layout_constraintTop_toBottomOf="@id/btn_edit_profile"/>
+
+    <TextView
+        android:id="@+id/btn_media_social"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Media Social"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/btn_ubah_password"
+        app:layout_constraintTop_toBottomOf="@id/btn_ubah_password"/>
+
+    <LinearLayout
+        android:id="@+id/layout_setting_aplikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_media_social"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_baseline_smartphone_24"
+            android:contentDescription="App Icon"
+            app:tint="@color/primary_500" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aplikasi"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/primary_500"
+            android:paddingStart="8dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_ubah_bahasa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubah Bahasa"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/layout_setting_aplikasi"
+        app:layout_constraintTop_toBottomOf="@id/layout_setting_aplikasi"/>
+
+    <LinearLayout
+        android:id="@+id/btn_notif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/btn_ubah_bahasa"
+        app:layout_constraintTop_toBottomOf="@id/btn_ubah_bahasa"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pemberitahuan"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_notif"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="150dp"
+            android:textColorHint="@color/primary_500"
+            app:thumbTint="@color/primary_500"
+            app:trackTint="@color/grey2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/btn_notif"
+        app:layout_constraintTop_toBottomOf="@id/btn_notif"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pembaruan"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_update"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="180dp"
+            android:textColorHint="@color/primary_500"
+            app:thumbTint="@color/primary_500"
+            app:trackTint="@color/grey2" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
