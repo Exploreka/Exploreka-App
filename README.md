@@ -23,4 +23,15 @@ Wishlist and Profile
 ![image](https://github.com/Exploreka/Exploreka/assets/96515927/86debcec-f1d0-47ba-ab0a-b4bce012f469)
 ![image](https://github.com/Exploreka/Exploreka/assets/96515927/e7d188e4-cb38-4fe2-9be5-c2664b340168)
 
+Home and Package
+
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/95b2f910-f2d7-4da5-8154-f0485473b9e0)
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/65a0cec1-0f9e-4202-90b5-7248d563d0ee)
+
+Navigation
+
+![image](https://github.com/Exploreka/Exploreka/assets/96515927/b205ce86-3b67-4fc2-8e7d-7dd9d6f69025)
+
+
+
 
