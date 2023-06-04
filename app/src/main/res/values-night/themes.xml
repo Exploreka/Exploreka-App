@@ -19,4 +19,9 @@
         <item name="android:textColor">@color/primary_500</item>
         <!-- Tambahkan item lain yang diperlukan di sini -->
     </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Exploreka" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
 </resources>

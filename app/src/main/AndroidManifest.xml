@@ -20,6 +20,7 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".OnboardingActivity"
             android:name=".SettingActivity"
             android:exported="false" >
             <meta-data
