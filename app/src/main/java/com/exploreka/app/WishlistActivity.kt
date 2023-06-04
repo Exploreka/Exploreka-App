@@ -3,6 +3,11 @@ package com.exploreka.app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.exploreka.app.data.Wishlist
+import com.exploreka.app.ui.WishlistAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -12,6 +17,24 @@ class WishlistActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wishlist)
         val fab: FloatingActionButton = findViewById(R.id.floating_action_button)
+
+
+        val recyclerView: RecyclerView = findViewById(R.id.rv_wishlist)
+        val wishlistList = listOf(
+            Wishlist(1, "Karimun Jawa","Rp 250.000"),
+            Wishlist(2, "Kepulauan Togian","Rp 750.000")
+            // Tambahkan kategori lainnya sesuai kebutuhan
+        )
+        val adapter = WishlistAdapter(wishlistList)
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = GridLayoutManager(this, 1)
+
+        val notif: ImageView = findViewById(R.id.notification_button)
+        notif.setOnClickListener {
+            val intent = Intent(this@WishlistActivity, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
         fab.setOnClickListener {
             val intent = Intent(this@WishlistActivity, NavigationActivity::class.java)
             startActivity(intent)
