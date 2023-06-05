@@ -7,9 +7,14 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.data.Category
+import com.exploreka.app.data.Wisata
+import com.exploreka.app.data.Wishlist
 import com.exploreka.app.ui.CategoryAdapter
+import com.exploreka.app.ui.WisataAdapter
+import com.exploreka.app.ui.WishlistAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -22,19 +27,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val recyclerView: RecyclerView = findViewById(R.id.rv_kategori)
+        val rvKategori: RecyclerView = findViewById(R.id.rv_kategori)
         val categoryList = listOf(
             Category(1, "Budaya"),
-            Category(2, "Taman Hiburan"),
-            Category(3, "Cagar Alam"),
+            Category(2, "Taman\nHiburan"),
+            Category(3, "Cagar\nAlam"),
             Category(4, "Bahari"),
-            Category(5, "Tempat Ibadah"),
-            Category(6, "Pusat Perbelanjaan"),
-            Category(7, "Kategori Lain")
+            Category(5, "Tempat\nIbadah"),
+            Category(6, "Pusat\nBelanja"),
+            Category(7, "Kategori\nLain")
             // Tambahkan kategori lainnya sesuai kebutuhan
         )
-        val adapter = CategoryAdapter(categoryList)
-        recyclerView.adapter = adapter
+        val kategoriAdapter = CategoryAdapter(categoryList)
+        rvKategori.adapter = kategoriAdapter
 
         val layoutManager = GridLayoutManager(this, 4)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -42,7 +47,20 @@ class MainActivity : AppCompatActivity() {
                 return 1 // Lebar setiap item adalah 1 kolom
             }
         }
-        recyclerView.layoutManager = layoutManager
+        rvKategori.layoutManager = layoutManager
+
+
+        val rv_wisata: RecyclerView = findViewById(R.id.rv_destinasi_wisata)
+        val wisataList = listOf(
+            Wisata(1, "Karimun Jawa","Jepara, Jawa Tengah","4.6","123"),
+            Wisata(2, "Kepulauan Togian","Ambon, Maluku","4.9","321"),
+            Wisata(3, "Karimun Jawa","Jepara, Jawa Tengah","4.6","123"),
+            Wisata(4, "Kepulauan Togian","Ambon, Maluku","4.9","321")
+            // Tambahkan kategori lainnya sesuai kebutuhan
+        )
+        val wisataAdapter = WisataAdapter(wisataList)
+        rv_wisata.adapter = wisataAdapter
+        rv_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
 
 

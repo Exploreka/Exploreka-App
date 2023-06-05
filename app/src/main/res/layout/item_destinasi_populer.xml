@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/nameTextView"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:padding="8dp"
             android:text="Karimunjawa"
             android:textColor="@color/black"
@@ -102,6 +102,7 @@
                 app:tint="#E2BD02" />
 
             <TextView
+                android:id="@+id/jumlah_ulasan"
                 android:layout_width="30dp"
                 android:layout_height="12dp"
                 android:text="(4051)"
