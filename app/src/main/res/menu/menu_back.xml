@@ -5,5 +5,5 @@
         android:title="Back"
         android:icon="@drawable/ic_baseline_arrow_back_ios_24"
         app:showAsAction="always"
-        android:tint="@color/white"/>
+        android:tint="@color/neutral_50"/>
 </menu>
