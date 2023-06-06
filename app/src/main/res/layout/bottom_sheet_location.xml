@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="100dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_location"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="36dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lokasi"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/primary_500"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/tv_desc_sheetDescription"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:text="Terletak di wilayah Kabupaten Ende, Provinsi Nusa Tenggara Timur."
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="16dp" />
+
+    <Button
+        style="@style/Widget.Material3.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buka Maps"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp" />
+
+</LinearLayout>

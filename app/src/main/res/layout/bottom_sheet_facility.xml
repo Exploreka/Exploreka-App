@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="100dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_facility"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="36dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fasilitas"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/primary_500"
+        android:layout_marginTop="15dp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kamar mandi"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restoran"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Penginapan"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mushola"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pusat oleh-oleh"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tempat Parkir"/>
+    </com.google.android.material.chip.ChipGroup>
+</LinearLayout>

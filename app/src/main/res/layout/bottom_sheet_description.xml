@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="100dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_description"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="36dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/primary_500"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/tv_desc_sheetDescription"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:text="Taman Nasional Kelimutu adalah salah satu tujuan wisata terkenal di Indonesia. Terletak di Pulau Flores, taman nasional ini menawarkan keindahan alam yang spektakuler dan menakjubkan. Salah satu daya tarik utama taman nasional ini adalah Danau Kelimutu yang terkenal dengan warna airnya yang dapat berubah-ubah. Dengan tiga danau berbeda yang memiliki warna yang unik, yaitu Danau Tiwu Nuwa Muri Koo Fai (Danau Warna Merah), Danau Tiwu Ata Polo (Danau Warna Biru), dan Danau Tiwu Ata Mbupu (Danau Warna Hijau), taman nasional ini menawarkan pemandangan yang sangat menakjubkan dan tidak dapat ditemukan di tempat lain. Melihat keindahan dan keunikan Danau Kelimutu adalah pengalaman yang tidak akan terlupakan bagi setiap pengunjung yang datang ke taman nasional ini."
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="12sp"
+        android:layout_gravity="center"
+        android:justificationMode="inter_word"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="16dp" />
+
+</LinearLayout>
