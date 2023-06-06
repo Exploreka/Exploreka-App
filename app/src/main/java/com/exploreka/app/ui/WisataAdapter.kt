@@ -27,11 +27,11 @@ class WisataAdapter(private val wisata: List<Wisata>) : RecyclerView.Adapter<Wis
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
-        private val LocationTextView: TextView = itemView.findViewById(R.id.locationTextView)
-        private val ReviewTextView: TextView = itemView.findViewById(R.id.review_star)
+        private val nameTextView: TextView = itemView.findViewById(R.id.tv_title_item)
+        private val LocationTextView: TextView = itemView.findViewById(R.id.tv_location_item)
+        private val ReviewTextView: TextView = itemView.findViewById(R.id.tv_reviewStar_item)
         private val JumlahUlasaanTextView: TextView = itemView.findViewById(R.id.jumlah_ulasan)
-        private val iconView : ImageView = itemView.findViewById(R.id.imageView)
+        private val iconView : ImageView = itemView.findViewById(R.id.img_view_item)
 
         fun bind(wisata: Wisata) {
             nameTextView.text = wisata.name
