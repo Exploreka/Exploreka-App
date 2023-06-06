@@ -49,4 +49,6 @@
     <string name="desc_one">Jelajahi keajaiban, temukan pengalaman tak terlupakan dalam petualangan tanpa batas bersama kami.</string>
     <string name="desc_two">Siap menemani setiap langkah petualangan anda.</string>
     <string name="desc_three" />
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

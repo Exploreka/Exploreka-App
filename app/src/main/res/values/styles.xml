@@ -6,9 +6,9 @@
     </style>
 
     <style name="ButtonStyle.Profile" parent="Widget.Material3.Button">
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@color/neutral_50</item>
         <item name="android:elevation">0dp</item>
-        <item name="backgroundTint">@color/white</item>
+        <item name="backgroundTint">@color/neutral_50</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
 
@@ -28,8 +28,8 @@
     </style>
 
     <style name="SearchViewTheme">
-        <item name="android:textColorPrimary">@color/white</item> <!-- Warna teks pada SearchView -->
-        <item name="android:editTextColor">@color/white</item> <!-- Warna teks pada input SearchView -->
+        <item name="android:textColorPrimary">@color/neutral_50</item> <!-- Warna teks pada SearchView -->
+        <item name="android:editTextColor">@color/neutral_50</item> <!-- Warna teks pada input SearchView -->
         <item name="android:queryBackground">@color/primary_500</item> <!-- Warna latar belakang input SearchView -->
 
     </style>
