@@ -21,7 +21,6 @@
         </activity>
         <activity
             android:name=".OnboardingActivity"
-            android:name=".SettingActivity"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
@@ -35,13 +34,8 @@
                 android:value="" />
         </activity>
         <activity
-<<<<<<< Updated upstream
             android:name=".SettingActivity"
             android:exported="false">
-=======
-            android:name=".OnboardingActivity"
-            android:exported="false" >
->>>>>>> Stashed changes
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
