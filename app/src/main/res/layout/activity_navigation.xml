@@ -69,7 +69,7 @@
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/view_pager"
+        android:id="@+id/rv_navigation"
         tools:listitem="@layout/item_navigation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
