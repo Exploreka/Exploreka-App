@@ -13,7 +13,7 @@
         android:layout_height="250dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageview_navigation"
             android:layout_width="340dp"
             android:layout_height="186dp"
             android:scaleType="centerCrop"
@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/tv_title_item"
+            android:id="@+id/tv_title_navigation"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -33,7 +33,7 @@
             android:fontFamily="@font/poppins_bold"
             android:textSize="16sp"
             android:includeFontPadding="false"
-            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/imageview_navigation"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <LinearLayout
@@ -44,7 +44,7 @@
             android:layout_marginStart="8dp"
             android:paddingTop="6dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_item">
+            app:layout_constraintTop_toBottomOf="@id/tv_title_navigation">
 
             <ImageView
                 android:id="@+id/starImageView"
@@ -55,7 +55,7 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
-                android:id="@+id/ratingTextView"
+                android:id="@+id/tv_reviewStar_navigation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4.5"
@@ -75,7 +75,7 @@
             android:src="@drawable/ic_baseline_favorite_24"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="10dp"
-            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/imageview_navigation"
             app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
