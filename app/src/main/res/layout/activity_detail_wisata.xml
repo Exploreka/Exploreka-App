@@ -440,26 +440,27 @@
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/neutral_50"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            style="@style/Widget.Material3.Button"
+            android:id="@+id/btn_360"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="360 VIEW"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="12sp"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/linearLayout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="56dp"-->
-    <!--        android:background="@color/neutral_50"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        android:gravity="center"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent">-->
-
-    <!--        <Button-->
-    <!--            style="@style/Widget.Material3.Button"-->
-    <!--            android:id="@+id/btn_360"-->
-    <!--            android:layout_width="326dp"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:gravity="center"-->
-    <!--            android:text="360 VIEW"-->
-    <!--            android:fontFamily="@font/poppins_medium"-->
-    <!--            android:textSize="12sp"/>-->
-    <!--    </LinearLayout>-->
