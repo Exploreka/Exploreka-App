@@ -9,12 +9,8 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.exploreka.app.data.Category
-import com.exploreka.app.data.Wisata
-import com.exploreka.app.data.Wishlist
-import com.exploreka.app.ui.CategoryAdapter
-import com.exploreka.app.ui.WisataAdapter
-import com.exploreka.app.ui.WishlistAdapter
+import com.exploreka.app.data.*
+import com.exploreka.app.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -61,6 +57,32 @@ class MainActivity : AppCompatActivity() {
         val wisataAdapter = WisataAdapter(wisataList)
         rv_wisata.adapter = wisataAdapter
         rv_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+
+        val rv_paket_wisata: RecyclerView = findViewById(R.id.rv_paket_wisata)
+        val paketWisataList = listOf(
+            PaketWisata(1, "Karimun Jawa", "Rp 250.000", "4.6", "123"),
+            PaketWisata(2, "Kepulauan Togian", "Rp 750.0000", "4.9", "321"),
+            PaketWisata(3, "Karimun Jawa", "Rp 250.000", "4.6", "123"),
+            PaketWisata(4, "Kepulauan Togian", "Rp 750.000", "4.9", "321")
+            // Tambahkan paket wisata lainnya sesuai kebutuhan
+        )
+        val paketWisataAdapter = PaketWisataAdapter(paketWisataList)
+        rv_paket_wisata.adapter = paketWisataAdapter
+        rv_paket_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+
+        val rv_artikel_inspiratif: RecyclerView = findViewById(R.id.rv_artikel)
+        val artikelList = listOf(
+            Artikel(1, "Karimun Jawa, Pesona Indah di Tanah Jawa"),
+            Artikel(2, "Kepulauan Togian, Pesona Indah di Tanah Maluku"),
+            Artikel(3, "Karimun Jawa, Pesona Indah di Tanah Jawa"),
+            Artikel(4, "Kepulauan Togian,Pesona Indah di Tanah Maluku")
+            // Tambahkan paket wisata lainnya sesuai kebutuhan
+        )
+        val artikelAdapter = ArtikelAdapter(artikelList)
+        rv_artikel_inspiratif.adapter = artikelAdapter
+        rv_artikel_inspiratif.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
 
 

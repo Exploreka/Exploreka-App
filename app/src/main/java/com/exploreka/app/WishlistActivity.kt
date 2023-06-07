@@ -22,7 +22,17 @@ class WishlistActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.rv_wishlist)
         val wishlistList = listOf(
             Wishlist(1, "Karimun Jawa","Rp 250.000"),
-            Wishlist(2, "Kepulauan Togian","Rp 750.000")
+            Wishlist(2, "Kepulauan Togian","Rp 750.000"),
+            Wishlist(3,"Karimun Jawa","Rp 250.0000"),
+            Wishlist(4, "Karimun Jawa","Rp 250.000"),
+            Wishlist(5, "Kepulauan Togian","Rp 750.000"),
+            Wishlist(6,"Karimun Jawa","Rp 250.0000"),
+            Wishlist(7, "Karimun Jawa","Rp 250.000"),
+            Wishlist(8, "Kepulauan Togian","Rp 750.000"),
+            Wishlist(9,"Karimun Jawa","Rp 250.0000"),
+            Wishlist(10, "Karimun Jawa","Rp 250.000"),
+            Wishlist(11, "Kepulauan Togian","Rp 750.000"),
+            Wishlist(12,"Karimun Jawa","Rp 250.0000")
             // Tambahkan kategori lainnya sesuai kebutuhan
         )
         val adapter = WishlistAdapter(wishlistList)
