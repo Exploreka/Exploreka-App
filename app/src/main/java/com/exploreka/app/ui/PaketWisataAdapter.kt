@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.R
 import com.exploreka.app.data.PaketWisata
-import com.exploreka.app.data.Wisata
 
 class PaketWisataAdapter(private val paketwisata: List<PaketWisata>) : RecyclerView.Adapter<PaketWisataAdapter.ViewHolder>() {
 
@@ -27,11 +26,11 @@ class PaketWisataAdapter(private val paketwisata: List<PaketWisata>) : RecyclerV
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
-        private val PriceTextView: TextView = itemView.findViewById(R.id.priceTextView)
-        private val ReviewTextView: TextView = itemView.findViewById(R.id.review_star)
-        private val JumlahUlasaanTextView: TextView = itemView.findViewById(R.id.jumlah_ulasan)
-        private val iconView : ImageView = itemView.findViewById(R.id.imageView)
+        private val nameTextView: TextView = itemView.findViewById(R.id.tv_title_paket)
+        private val PriceTextView: TextView = itemView.findViewById(R.id.tv_price_paket)
+        private val ReviewTextView: TextView = itemView.findViewById(R.id.tv_reviewStar_paket)
+        private val JumlahUlasaanTextView: TextView = itemView.findViewById(R.id.jumlah_ulasan_paket)
+        private val iconView : ImageView = itemView.findViewById(R.id.img_view_paket)
 
         fun bind(paketwisata: PaketWisata) {
             nameTextView.text = paketwisata.name

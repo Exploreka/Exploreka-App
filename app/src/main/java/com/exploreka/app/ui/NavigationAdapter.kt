@@ -28,9 +28,9 @@ class NavigationAdapter(private val navigation: List<Navigation>) : RecyclerView
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nameTextView: TextView = itemView.findViewById(R.id)
-        private val ReviewTextView: TextView = itemView.findViewById(R.id.ratingTextView)
-        private val iconView : ImageView = itemView.findViewById(R.id.imageView)
+        private val nameTextView: TextView = itemView.findViewById(R.id.tv_title_navigation)
+        private val ReviewTextView: TextView = itemView.findViewById(R.id.tv_reviewStar_navigation)
+        private val iconView : ImageView = itemView.findViewById(R.id.imageview_navigation)
 
         fun bind(navigation: Navigation) {
             nameTextView.text = navigation.name
