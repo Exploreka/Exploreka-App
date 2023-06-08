@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -41,13 +43,18 @@ class DetailWisataActivity : AppCompatActivity() {
             showBottomSheetDialog(R.layout.bottom_sheet_description)
         }
 
+        val btnReview: Button = findViewById(R.id.btn_review)
         btnReview.setOnClickListener {
-            val reviewFragment = ReviewFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentReview_container, reviewFragment)
-                .addToBackStack(null)
-                .commit()
+            val intent = Intent(this@DetailWisataActivity, ReviewActivity::class.java)
+            startActivity(intent)
         }
+
+        val backButton = findViewById<ImageButton>(R.id.btn_back)
+        backButton.setOnClickListener {
+            // Tuliskan logika navigasi ke halaman sebelumnya di sini
+            onBackPressed() // Contoh menggunakan onBackPressed()
+        }
+
 
         val btn360: Button = findViewById(R.id.btn_360)
         btn360.setOnClickListener {
