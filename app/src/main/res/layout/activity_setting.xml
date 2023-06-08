@@ -200,4 +200,19 @@
 
     </LinearLayout>
 
+    <Button
+        style="@style/ButtonStyle.Logout"
+        android:id="@+id/btn_360"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:elevation="12dp"
+        android:text="Log Out"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="12sp"
+        app:drawableLeft="@drawable/ic_baseline_logout_24"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="@id/btn_update"
+        app:layout_constraintEnd_toEndOf="@id/btn_update"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
