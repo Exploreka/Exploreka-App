@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -29,9 +31,6 @@
         <activity
             android:name=".ViewWisataActivity"
             android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
         <activity
             android:name=".SettingActivity"
@@ -128,6 +127,10 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCwvY8L9xVGCmwB2u8w2-CSC_Z5Vzq9O1Y" />
+
     </application>
 
 </manifest>
