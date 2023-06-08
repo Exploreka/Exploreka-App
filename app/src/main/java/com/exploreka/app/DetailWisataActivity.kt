@@ -1,9 +1,11 @@
 package com.exploreka.app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class DetailWisataActivity : AppCompatActivity() {
 
@@ -46,6 +48,14 @@ class DetailWisataActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        val btn360: Button = findViewById(R.id.btn_360)
+        btn360.setOnClickListener {
+            val intent = Intent(this@DetailWisataActivity, ViewWisataActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
     private fun showBottomSheetDialog(layoutResId: Int) {
