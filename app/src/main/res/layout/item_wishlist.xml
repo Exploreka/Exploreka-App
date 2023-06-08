@@ -6,13 +6,13 @@
     android:layout_gravity="center_horizontal"
     android:layout_margin="10dp"
     android:padding="8dp"
-    android:background="@color/white"
+    android:background="@color/neutral_50"
     app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:background="@color/neutral_50">
 
         <ImageView
             android:id="@+id/image_wishlist"
