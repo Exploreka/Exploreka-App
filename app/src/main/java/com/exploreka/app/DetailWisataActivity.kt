@@ -3,6 +3,10 @@ package com.exploreka.app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.exploreka.app.data.Wisata
+import com.exploreka.app.ui.WisataAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class DetailWisataActivity : AppCompatActivity() {
@@ -22,6 +26,23 @@ class DetailWisataActivity : AppCompatActivity() {
         btnFacility = findViewById(R.id.btn_facility)
         btnDescription = findViewById(R.id.btn_description)
         btnReview = findViewById(R.id.btn_review)
+
+        val rvWisata: RecyclerView = findViewById(R.id.rv_recomend_destination)
+        val wisataList = listOf(
+            Wisata(1, "Karimun Jawa","Jepara, Jawa Tengah","4.6","123"),
+            Wisata(2, "Kepulauan Togian","Ambon, Maluku","4.9","321"),
+            Wisata(3, "Karimun Jawa","Jepara, Jawa Tengah","4.6","123"),
+            Wisata(4, "Kepulauan Togian","Ambon, Maluku","4.9","321")
+            // Tambahkan kategori lainnya sesuai kebutuhan
+        )
+
+        val spanCount = 2 // Jumlah kolom yang diinginkan
+        val gridLayoutManager = GridLayoutManager(this, spanCount)
+        rvWisata.layoutManager = gridLayoutManager
+
+        val wisataAdapter = WisataAdapter(wisataList)
+        rvWisata.adapter = wisataAdapter
+
 
         btnLocation.setOnClickListener {
             showBottomSheetDialog(R.layout.bottom_sheet_location)
