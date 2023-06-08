@@ -43,7 +43,9 @@ class PackageActivity : AppCompatActivity() {
         rv_wisata_religi.adapter = paketWisataAdapter
         rv_wisata_religi.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-
+        val rv_paket_gunung : RecyclerView = findViewById(R.id.rv_paket_wisata_gunung)
+        rv_paket_gunung.adapter = paketWisataAdapter
+        rv_paket_gunung.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)

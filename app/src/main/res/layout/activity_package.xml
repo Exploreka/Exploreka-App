@@ -1,13 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/neutral_50"
-    tools:context=".PackageActivity">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent">
 
-    <androidx.appcompat.widget.Toolbar
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp"
+            android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -194,6 +209,8 @@
         app:layout_constraintTop_toBottomOf="@id/rv_paket_wisata_religi"
         app:layout_constraintLeft_toRightOf="@id/tv_paket_wisata_religi" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -210,10 +227,10 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/FAB.WhiteText"
         android:id="@+id/floating_action_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/FAB.WhiteText"
         app:borderWidth="5dp"
         android:background="@drawable/rounded_fab"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialComponents.LargeComponent"
@@ -222,8 +239,5 @@
         app:layout_constraintTop_toTopOf="@id/bottom_navigation"
         app:layout_constraintStart_toStartOf="@id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="@id/bottom_navigation"
-        android:layout_marginTop="-16dp" /> <!-- Sesuaikan dengan nilai yang diinginkan -->
-
-
-
+        android:layout_marginTop="-16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
