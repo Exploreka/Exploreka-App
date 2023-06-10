@@ -132,7 +132,7 @@
         android:id="@+id/tv_paket_wisata_religi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Paket Wisata Religi"
+        android:text="Paket Religi"
         android:layout_marginStart="20dp"
         android:textSize="22sp"
         android:textColor="@color/black"

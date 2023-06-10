@@ -10,7 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="200dp"
-        android:layout_height="160dp">
+        android:layout_height="160dp"
+        android:background="@color/neutral_50">
 
         <ImageView
             android:id="@+id/image_news"

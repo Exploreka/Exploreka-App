@@ -37,11 +37,15 @@ class CategoryAdapter(private val categories: List<Category>) : RecyclerView.Ada
 
     private fun getIconResource(categoryId: Int): Int {
         return when (categoryId) {
-            1 -> R.drawable.ic_baseline_headphones_24
-            2 -> R.drawable.ic_baseline_help_outline_24
-            3 -> R.drawable.ic_baseline_home_24
+            1 -> R.drawable.kategori_budaya
+            2 -> R.drawable.kategori_taman_hiburan
+            3 -> R.drawable.kategori_cagar_alam
+            4 -> R.drawable.kategori_bahari
+            5 -> R.drawable.kategori_pusat_perbelanjaan
+            6 -> R.drawable.kategori_tempat_ibadah
+            //
             // Tambahkan kategori lainnya sesuai kebutuhan
-            else -> R.drawable.ic_baseline_favorite_24
+            else -> R.drawable.kategori_lain
         }
     }
 }
