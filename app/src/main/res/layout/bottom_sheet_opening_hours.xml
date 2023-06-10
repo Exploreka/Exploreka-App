@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="100dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/neutral_50">
 
     <ImageView
         android:layout_width="50dp"
@@ -35,6 +36,7 @@
             android:layout_weight="1"
             android:gravity="start"
             android:text="Senin\nSelasa\nRabu\nKamis\nJumat\nSabtu\nMinggu"
+            android:textColor="@color/black"
             android:lineSpacingExtra="8dp"/>
 
         <TextView
@@ -43,6 +45,7 @@
             android:layout_weight="1"
             android:gravity="end"
             android:text="Tutup\n07.00 - 21.00\n07.00 - 21.00\n07.00 - 21.00\n07.00 - 21.00\n07.00 - 21.00\n07.00 - 21.00"
+            android:textColor="@color/black"
             android:lineSpacingExtra="8dp"/>
     </LinearLayout>
 </LinearLayout>

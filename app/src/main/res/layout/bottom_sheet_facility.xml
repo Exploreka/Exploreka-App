@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="100dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/neutral_50">
 
     <ImageView
         android:layout_width="50dp"
@@ -32,36 +33,42 @@
             style="@style/Widget.Material3.Chip.Suggestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/chip_selector"
             android:text="Kamar mandi"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/chip_selector"
             android:text="Restoran"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/chip_selector"
             android:text="Penginapan"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/chip_selector"
             android:text="Mushola"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/chip_selector"
             android:text="Pusat oleh-oleh"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/chip_selector"
             android:text="Tempat Parkir"/>
     </com.google.android.material.chip.ChipGroup>
 </LinearLayout>
