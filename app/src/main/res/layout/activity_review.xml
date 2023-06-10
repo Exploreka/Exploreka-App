@@ -5,7 +5,8 @@
     android:id="@+id/fragmentReview_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReviewFragment">
+    tools:context=".ReviewFragment"
+    android:background="@color/neutral_50">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

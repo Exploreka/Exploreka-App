@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="100dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/neutral_50" >
 
     <ImageView
         android:layout_width="50dp"
@@ -29,6 +30,7 @@
         android:text="Taman Nasional Kelimutu adalah salah satu tujuan wisata terkenal di Indonesia. Terletak di Pulau Flores, taman nasional ini menawarkan keindahan alam yang spektakuler dan menakjubkan. Salah satu daya tarik utama taman nasional ini adalah Danau Kelimutu yang terkenal dengan warna airnya yang dapat berubah-ubah. Dengan tiga danau berbeda yang memiliki warna yang unik, yaitu Danau Tiwu Nuwa Muri Koo Fai (Danau Warna Merah), Danau Tiwu Ata Polo (Danau Warna Biru), dan Danau Tiwu Ata Mbupu (Danau Warna Hijau), taman nasional ini menawarkan pemandangan yang sangat menakjubkan dan tidak dapat ditemukan di tempat lain. Melihat keindahan dan keunikan Danau Kelimutu adalah pengalaman yang tidak akan terlupakan bagi setiap pengunjung yang datang ke taman nasional ini."
         android:fontFamily="@font/poppins_medium"
         android:textSize="12sp"
+        android:textColor="@color/black"
         android:layout_gravity="center"
         android:justificationMode="inter_word"
         android:layout_marginTop="15dp"
