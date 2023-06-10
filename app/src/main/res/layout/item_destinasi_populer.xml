@@ -10,7 +10,8 @@
     
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/neutral_50">
 
         <ImageView
             android:id="@+id/img_view_item"
@@ -72,6 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4.9"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/poppins"
                     android:textSize="9sp"
                     android:includeFontPadding="false"/>
@@ -87,6 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="(4051)"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/poppins"
                     android:textSize="8sp"
                     android:gravity="end"/>
