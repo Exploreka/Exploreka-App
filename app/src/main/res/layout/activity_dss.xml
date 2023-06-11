@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DssActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_500"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/exploreka"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:src="@drawable/exploreka" />
+
+        <ImageView
+            android:id="@+id/notification_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:src="@drawable/ic_baseline_notifications_none_24"/>
+
+        <ImageView
+            android:id="@+id/help_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:src="@drawable/ic_baseline_help_outline_24"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="vertical"
+        android:layout_marginTop="42dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategori Wisata Apa yang\nKamu Cari?"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/dropdown_category"
+            android:layout_width="178dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:background="@drawable/background_transparent_with_radius"
+            android:contentDescription="dropdown category"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Budget Kamu Berapa Nih?"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_email"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Rp"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mau Wisata ke Daerah Mana??"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:id="@+id/dropdown_country"
+            android:layout_width="178dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="12dp"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:background="@drawable/background_transparent_with_radius"
+            android:contentDescription="dropdown country"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ratingnya Berapa Nih?"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:startIconDrawable="@drawable/ic_star"
+            app:startIconTint="@color/warning_500">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:text="Bintang 5"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

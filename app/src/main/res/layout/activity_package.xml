@@ -194,7 +194,6 @@
         app:layout_constraintTop_toBottomOf="@id/rv_paket_wisata_religi"
         app:layout_constraintLeft_toRightOf="@id/tv_paket_wisata_religi" />
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -222,7 +221,7 @@
         app:layout_constraintTop_toTopOf="@id/bottom_navigation"
         app:layout_constraintStart_toStartOf="@id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="@id/bottom_navigation"
-        android:layout_marginTop="-16dp" /> <!-- Sesuaikan dengan nilai yang diinginkan -->
+        android:layout_marginTop="-16dp" />
 
 
 
