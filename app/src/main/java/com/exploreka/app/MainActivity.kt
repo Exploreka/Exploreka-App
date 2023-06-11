@@ -15,7 +15,7 @@ import com.exploreka.app.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
     private lateinit var bottomNavigationView: BottomNavigationView
 
 
@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity() {
             // Tambahkan kategori lainnya sesuai kebutuhan
         )
         val wisataAdapter = WisataAdapter(wisataList)
+        wisataAdapter.setOnItemClickListener(this)
         rv_wisata.adapter = wisataAdapter
         rv_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
@@ -132,5 +133,11 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+    }
+    override fun onItemClick(wisata: Wisata) {
+        val intent = Intent(this, DetailWisataActivity::class.java)
+        intent.putExtra("wisata", wisata)
+        startActivity(intent)
     }
 }

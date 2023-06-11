@@ -1,6 +1,6 @@
 <androidx.cardview.widget.CardView
-    android:layout_width="200dp"
-    android:layout_height="160dp"
+    android:layout_width="160dp"
+    android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
     app:cardElevation="4dp"
@@ -9,14 +9,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="200dp"
-        android:layout_height="160dp"
+        android:layout_width="170dp"
+        android:layout_height="120dp"
         android:background="@color/neutral_50">
 
         <ImageView
             android:id="@+id/image_news"
-            android:layout_width="200dp"
-            android:layout_height="116dp"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
             android:scaleType="centerCrop"
             android:src="@drawable/karimunjawa"
             app:layout_constraintTop_toTopOf="parent"

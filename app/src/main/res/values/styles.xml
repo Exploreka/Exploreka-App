@@ -27,6 +27,14 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
+    <style name="ButtonStyle.Logout" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/secondary_500</item>
+        <item name="android:elevation">12dp</item>
+        <item name="android:textColor">@color/neutral_50</item>
+        <item name="android:tint">@color/white</item>
+        <item name="drawableLeftCompat">@drawable/ic_baseline_logout_24</item>>
+    </style>
+
     <style name="SearchViewTheme">
         <item name="android:textColorPrimary">@color/neutral_50</item> <!-- Warna teks pada SearchView -->
         <item name="android:editTextColor">@color/neutral_50</item> <!-- Warna teks pada input SearchView -->

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="100dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/neutral_50" >
 
     <ImageView
         android:layout_width="50dp"
@@ -29,6 +30,7 @@
         android:text="Terletak di wilayah Kabupaten Ende, Provinsi Nusa Tenggara Timur."
         android:fontFamily="@font/poppins_medium"
         android:textSize="12sp"
+        android:textColor="@color/black"
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_marginTop="15dp"

@@ -10,7 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="340dp"
-        android:layout_height="250dp">
+        android:layout_height="250dp"
+        android:background="@color/neutral_50">
 
         <ImageView
             android:id="@+id/imageview_navigation"
@@ -29,7 +30,7 @@
             android:layout_marginStart="8dp"
             android:paddingTop="8dp"
             android:text="Karimum Jawa"
-            android:textColor="@color/neutral_900"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppins_bold"
             android:textSize="16sp"
             android:includeFontPadding="false"
