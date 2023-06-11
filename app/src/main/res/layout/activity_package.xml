@@ -56,32 +56,25 @@
 
             </androidx.appcompat.widget.Toolbar>
 
-            <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/searchview_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/neutral_50"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+            <LinearLayout
+                android:id="@+id/searchview_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_with_radius"
+                android:backgroundTint="@color/primary_500"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-            android:id="@+id/filterImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_filter_list_24"
-            android:padding="10dp"
-            android:layout_gravity="start"
-            android:layout_marginStart="20dp"
-            app:tint="@android:color/black" />
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            app:tint="@android:color/white"/>
-
-    </com.google.android.material.appbar.MaterialToolbar>
+                <com.google.android.material.search.SearchBar
+                    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Jawa tengah"
+                    android:contentDescription="search bar"
+                    android:backgroundTint="@color/neutral_50"
+                    app:navigationIcon="@drawable/ic_filter"/>
+            </LinearLayout>
 
     <TextView
         android:id="@+id/tv_paket_wisata_murah"
@@ -89,7 +82,7 @@
         android:layout_height="wrap_content"
         android:text="Paket Murah "
         android:layout_marginStart="20dp"
-        android:textSize="22sp"
+        android:textSize="16sp"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="15dp"
@@ -101,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selengkapnya >"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textColor="@color/primary_500"
         android:fontFamily="@font/poppins"
         android:layout_marginTop="20dp"
@@ -130,7 +123,7 @@
         android:layout_height="wrap_content"
         android:text="Paket Religi"
         android:layout_marginStart="20dp"
-        android:textSize="22sp"
+        android:textSize="16sp"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="15dp"
@@ -142,7 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selengkapnya >"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textColor="@color/primary_500"
         android:fontFamily="@font/poppins"
         android:layout_marginTop="20dp"
@@ -170,7 +163,7 @@
         android:layout_height="wrap_content"
         android:text="Paket Gunung"
         android:layout_marginStart="20dp"
-        android:textSize="22sp"
+        android:textSize="16sp"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="15dp"
@@ -196,7 +189,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selengkapnya >"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textColor="@color/primary_500"
         android:fontFamily="@font/poppins"
         android:layout_marginTop="20dp"
