@@ -27,12 +27,12 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         val rvKategori: RecyclerView = findViewById(R.id.rv_kategori)
         val categoryList = listOf(
             Category(1, "Budaya"),
-            Category(2, "Taman\nHiburan"),
-            Category(3, "Cagar\nAlam"),
+            Category(2, "Taman Hiburan"),
+            Category(3, "CagarAlam"),
             Category(4, "Bahari"),
-            Category(5, "Tempat\nIbadah"),
-            Category(6, "Pusat\nBelanja"),
-            Category(7, "Kategori\nLain")
+            Category(5, "Tempat Ibadah"),
+            Category(6, "Pusat Belanja"),
+            Category(7, "Kategori Lain")
             // Tambahkan kategori lainnya sesuai kebutuhan
         )
         val kategoriAdapter = CategoryAdapter(categoryList)

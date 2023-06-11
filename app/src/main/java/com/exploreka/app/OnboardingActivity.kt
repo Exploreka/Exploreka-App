@@ -76,7 +76,7 @@ class OnboardingActivity : AppCompatActivity() {
         })
 
         skipBtn.setOnClickListener {
-            val intent = Intent(this@OnboardingActivity, DetailWisataActivity::class.java)
+            val intent = Intent(this@OnboardingActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -6,4 +6,4 @@
     android:fontFamily="@font/poppins_regular"
     android:textSize="14sp"
     android:padding="12dp"
-    android:textColor="@color/neutral_900"/>
+    android:textColor="@color/neutral_900" />
