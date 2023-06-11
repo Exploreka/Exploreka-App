@@ -3,6 +3,7 @@ package com.exploreka.app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.data.PaketWisata
@@ -38,14 +39,36 @@ class PackageActivity : AppCompatActivity() {
         rv_paket_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
 
+        val PaketMurah = findViewById<TextView>(R.id.tv_selengkapnya_murah)
+        PaketMurah.setOnClickListener {
+            // Intent ke aktivitas lain
+            val intent = Intent(this, PaketWisataMurahActivity::class.java)
+            startActivity(intent)
+        }
+
 
         val rv_wisata_religi : RecyclerView = findViewById(R.id.rv_paket_wisata_religi)
         rv_wisata_religi.adapter = paketWisataAdapter
         rv_wisata_religi.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
+        val PaketReligi = findViewById<TextView>(R.id.tv_selengkapnya_religi)
+        PaketReligi.setOnClickListener {
+            // Intent ke aktivitas lain
+            val intent = Intent(this, PaketWisataReligiActivity::class.java)
+            startActivity(intent)
+        }
+
         val rv_paket_gunung : RecyclerView = findViewById(R.id.rv_paket_wisata_gunung)
         rv_paket_gunung.adapter = paketWisataAdapter
         rv_paket_gunung.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+
+        val PaketGunung = findViewById<TextView>(R.id.tv_selengkapnya_gunung)
+        PaketGunung.setOnClickListener {
+            // Intent ke aktivitas lain
+            val intent = Intent(this, PaketWisataGunungActivity::class.java)
+            startActivity(intent)
+        }
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)

@@ -22,36 +22,41 @@
             android:paddingBottom="100dp"
             android:background="@color/white">
 
-        <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/primary_500"
-        app:layout_constraintTop_toTopOf="parent">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_500"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10 Paket Wisata Populer"
-            android:layout_gravity="center"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/poppins_bold"/>
+                <ImageView
+                    android:id="@+id/exploreka"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/exploreka"
+                    android:layout_gravity="start" />
 
-        <ImageView
-            android:id="@+id/help_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_help_outline_24"
-            android:layout_gravity="end"
-            android:padding="10dp"
-            app:tint="@color/neutral_50" />
+                <ImageView
+                    android:id="@+id/notification_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_notifications_none_24"
+                    android:layout_gravity="end"
+                    android:padding="10dp"
+                    app:tint="@color/neutral_50" />
 
+                <ImageView
+                    android:id="@+id/help_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_help_outline_24"
+                    android:layout_gravity="end"
+                    android:padding="10dp"
+                    app:tint="@color/neutral_50" />
 
-    </androidx.appcompat.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.appbar.MaterialToolbar
+            <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/searchview_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
