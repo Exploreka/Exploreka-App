@@ -162,14 +162,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
                     app:layout_constraintTop_toBottomOf="@id/tv_kategori"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_kategori"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:listitem="@layout/item_categories"
                         tools:itemCount="7"
@@ -279,7 +278,6 @@
 
                 <TextView
                     android:id="@+id/tv_wisata_selengkapnya"
-                    android:id="@+id/wisata_selengkapnya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Selengkapnya >"

@@ -45,6 +45,12 @@ class WishlistActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val help: ImageView = findViewById(R.id.help_button)
+        help.setOnClickListener {
+            val intent = Intent(this@WishlistActivity, HelpCenterActivity::class.java)
+            startActivity(intent)
+        }
+
         fab.setOnClickListener {
             val intent = Intent(this@WishlistActivity, NavigationActivity::class.java)
             startActivity(intent)

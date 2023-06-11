@@ -25,6 +25,12 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val help: ImageView = findViewById(R.id.help_button)
+        help.setOnClickListener {
+            val intent = Intent(this@ProfileActivity, HelpCenterActivity::class.java)
+            startActivity(intent)
+        }
+
         val setting: Button = findViewById(R.id.btn_setting)
         setting.setOnClickListener {
             val intent = Intent(this@ProfileActivity , SettingActivity::class.java)

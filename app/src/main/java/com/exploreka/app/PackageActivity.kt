@@ -3,6 +3,7 @@ package com.exploreka.app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -70,6 +71,17 @@ class PackageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val notif: ImageView = findViewById(R.id.notification_button)
+        notif.setOnClickListener {
+            val intent = Intent(this@PackageActivity, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
+        val help: ImageView = findViewById(R.id.help_button)
+        help.setOnClickListener {
+            val intent = Intent(this@PackageActivity, HelpCenterActivity::class.java)
+            startActivity(intent)
+        }
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigationView.selectedItemId = R.id.menu_package
