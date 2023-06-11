@@ -1,5 +1,8 @@
 package com.exploreka.app.retrofit
 
+import com.exploreka.app.data.response.login.LoginResponse
+import com.exploreka.app.data.response.main.AttractionsResponse
+import com.exploreka.app.data.response.register.RegisterResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.*
@@ -33,7 +36,7 @@ interface ApiService {
         @Query("open_hour") open_hour: String,
         @Query("close_hour") close_hour: String,
         @Query("id_attraction_cat") id_attraction_cat: Int,
-        @Query("id_city") id_city: String,
+        @Query("id_city") id_city: Int
     ): AttractionsResponse
 
 
