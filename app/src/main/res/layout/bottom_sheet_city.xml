@@ -8,7 +8,7 @@
     android:paddingBottom="100dp">
 
     <TextView
-        android:id="@+id/tv_title_sheet_country"
+        android:id="@+id/tv_title_sheet_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mau Wisata ke Daerah Mana?"
@@ -22,16 +22,19 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="30dp"
+        app:singleSelection="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_sheet_country">
-        
+        app:layout_constraintTop_toBottomOf="@id/tv_title_sheet_city">
+
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
+            android:id="@+id/chip_jakarta"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:text="Jakarta"
@@ -42,6 +45,7 @@
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
+            android:id="@+id/chip_yogyakarta"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:text="Yogyakarta"
@@ -52,6 +56,7 @@
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
+            android:id="@+id/chip_bandung"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:text="Bandung"
@@ -62,6 +67,7 @@
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
+            android:id="@+id/chip_semarang"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:text="Semarang"
@@ -72,6 +78,7 @@
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Suggestion"
+            android:id="@+id/chip_surabaya"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:text="Surabaya"
