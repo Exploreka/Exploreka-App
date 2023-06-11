@@ -16,6 +16,27 @@
         android:theme="@style/Theme.Exploreka"
         tools:targetApi="31">
         <activity
+            android:name=".ArtikelActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".PaketWisataPopulerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DestinasiWisataPopulerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ReviewActivity"
             android:exported="false">
             <meta-data
@@ -38,7 +59,7 @@
         </activity>
         <activity
             android:name=".ViewWisataActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".SettingActivity"
             android:exported="false">
