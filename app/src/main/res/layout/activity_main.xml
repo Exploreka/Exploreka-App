@@ -135,9 +135,10 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/wisata_selengkapnya"
+                android:id="@+id/tv_wisata_selengkapnya"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:text="Selengkapnya >"
                 android:textSize="16sp"
                 android:textColor="@color/primary_500"
@@ -178,6 +179,7 @@
                 android:id="@+id/tv_paket_selengkapnya"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:text="Selengkapnya >"
                 android:textSize="16sp"
                 android:textColor="@color/primary_500"
@@ -218,6 +220,7 @@
                 android:id="@+id/tv_artikel_selengkapnya"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:text="Selengkapnya >"
                 android:textSize="16sp"
                 android:textColor="@color/primary_500"
@@ -237,7 +240,7 @@
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="1"
                 android:layout_marginStart="20dp"
-                tools:listitem="@layout/item_artikel_inspiratif"
+                tools:listitem="@layout/item_artikel_inspiratif_2"
                 app:layout_constraintTop_toBottomOf="@id/tv_artikel"
                 app:layout_constraintStart_toStartOf="@id/tv_artikel" />
         </androidx.constraintlayout.widget.ConstraintLayout>

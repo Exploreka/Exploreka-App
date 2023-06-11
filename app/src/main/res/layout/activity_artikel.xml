@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    tools:context=".ArtikelActivity"
     app:layout_constraintBottom_toBottomOf="parent">
 
     <androidx.core.widget.NestedScrollView
@@ -20,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="100dp"
+            tools:context=".ArtikelActivity"
             android:background="@color/white">
 
             <androidx.appcompat.widget.Toolbar
@@ -89,7 +91,7 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_paket_wisata_murah"
+                android:id="@+id/rv_artikel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
