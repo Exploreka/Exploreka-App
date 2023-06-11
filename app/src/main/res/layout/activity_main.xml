@@ -278,6 +278,7 @@
                     app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
+                    android:id="@+id/tv_wisata_selengkapnya"
                     android:id="@+id/wisata_selengkapnya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
