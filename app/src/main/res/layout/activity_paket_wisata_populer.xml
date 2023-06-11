@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    tools:context=".PaketWisataPopulerActivity"
     app:layout_constraintBottom_toBottomOf="parent">
 
     <androidx.core.widget.NestedScrollView
@@ -20,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="100dp"
+            tools:context=".PaketWisataPopulerActivity"
             android:background="@color/white">
 
             <androidx.appcompat.widget.Toolbar
@@ -89,7 +91,7 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_paket_wisata_murah"
+                android:id="@+id/rv_10_paket_wisata"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -97,7 +99,6 @@
                 tools:itemCount="10"
                 tools:listitem="@layout/item_paket_wisata"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/searchview_layout"
                 app:layout_constraintStart_toStartOf="@id/searchview_layout" />

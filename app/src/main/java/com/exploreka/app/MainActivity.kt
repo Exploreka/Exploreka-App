@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -61,6 +62,14 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         rv_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
 
+        val WisataPopuler = findViewById<TextView>(R.id.tv_wisata_selengkapnya)
+        WisataPopuler.setOnClickListener {
+            // Intent ke aktivitas lain
+            val intent = Intent(this, DestinasiWisataPopulerActivity::class.java)
+            startActivity(intent)
+        }
+
+
         val rv_paket_wisata: RecyclerView = findViewById(R.id.rv_paket_wisata)
         val paketWisataList = listOf(
             PaketWisata(1, "Karimun Jawa", "Rp 250.000", "4.6", "123"),
@@ -72,6 +81,13 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         val paketWisataAdapter = PaketWisataAdapter(paketWisataList)
         rv_paket_wisata.adapter = paketWisataAdapter
         rv_paket_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        val PaketPopuler = findViewById<TextView>(R.id.tv_paket_selengkapnya)
+        PaketPopuler.setOnClickListener {
+            // Intent ke aktivitas lain
+            val intent = Intent(this, PaketWisataPopulerActivity::class.java)
+            startActivity(intent)
+        }
 
 
         val rv_artikel_inspiratif: RecyclerView = findViewById(R.id.rv_artikel)
@@ -86,6 +102,12 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         rv_artikel_inspiratif.adapter = artikelAdapter
         rv_artikel_inspiratif.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
+        val ArtikelPopuler = findViewById<TextView>(R.id.tv_artikel_selengkapnya)
+        ArtikelPopuler.setOnClickListener {
+            // Intent ke aktivitas lain
+            val intent = Intent(this, ArtikelActivity::class.java)
+            startActivity(intent)
+        }
 
 
         val notif: ImageView = findViewById(R.id.notification_button)
