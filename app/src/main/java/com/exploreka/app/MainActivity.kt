@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         rv_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
 
-        val WisataPopuler = findViewById<TextView>(R.id.wisata_selengkapnya)
+        val WisataPopuler = findViewById<TextView>(R.id.tv_wisata_selengkapnya)
         WisataPopuler.setOnClickListener {
             // Intent ke aktivitas lain
             val intent = Intent(this, DestinasiWisataPopulerActivity::class.java)
@@ -113,6 +113,12 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         val notif: ImageView = findViewById(R.id.notification_button)
         notif.setOnClickListener {
             val intent = Intent(this@MainActivity, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
+        val help: ImageView = findViewById(R.id.help_button)
+        help.setOnClickListener {
+            val intent = Intent(this@MainActivity, HelpCenterActivity::class.java)
             startActivity(intent)
         }
 
