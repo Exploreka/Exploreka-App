@@ -49,9 +49,15 @@
     <string name="desc_one">Jelajahi keajaiban, temukan pengalaman tak terlupakan dalam petualangan tanpa batas bersama kami.</string>
     <string name="desc_two">Siap menemani setiap langkah petualangan anda.</string>
     <string name="desc_three" />
+    <string-array name="dropdown_rating">
+        <item>Rating 1</item>
+        <item>Rating 2</item>
+        <item>Rating 3</item>
+        <item>Rating 4</item>
+        <item>Rating 5</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+  
     <string name="google_maps_api_key">AIzaSyCwvY8L9xVGCmwB2u8w2-CSC_Z5Vzq9O1Y</string>
-
 </resources>
