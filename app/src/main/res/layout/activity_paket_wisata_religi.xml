@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ArtikelActivity"
+    tools:context=".PaketWisataReligiActivity"
     app:layout_constraintBottom_toBottomOf="parent">
 
     <androidx.core.widget.NestedScrollView
@@ -15,19 +15,20 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         android:fillViewport="true"
-        tools:context=".ArtikelActivity">
+        tools:context=".PaketWisataReligiActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="100dp"
-            tools:context=".ArtikelActivity"
+            tools:context=".PaketWisataReligiActivity"
             android:background="@color/white">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                tools:context=".PaketWisataReligiActivity"
                 android:background="@color/primary_500"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -43,7 +44,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10 Artikel Inspiratif"
+                    android:text="10 Paket Wisata Religi"
                     android:layout_gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
@@ -91,13 +92,13 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_artikel"
+                android:id="@+id/rv_10_paket_wisata_religi"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
                 tools:itemCount="10"
-                tools:listitem="@layout/item_artikel_inspiratif_2"
+                tools:listitem="@layout/item_paket_wisata"
                 android:layout_marginStart="20dp"
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/searchview_layout"

@@ -12,7 +12,7 @@ import com.exploreka.app.data.Artikel
 class ArtikelAdapter(private val artikel: List<Artikel>) : RecyclerView.Adapter<ArtikelAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_artikel_inspiratif, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_artikel_inspiratif_2, parent, false)
         return ViewHolder(view)
     }
 
@@ -40,6 +40,13 @@ class ArtikelAdapter(private val artikel: List<Artikel>) : RecyclerView.Adapter<
             1 -> R.drawable.karimunjawa
             2 -> R.drawable.kepulauan_togian
             3 -> R.drawable.karimunjawa
+            4 -> R.drawable.kepulauan_togian
+            5 -> R.drawable.karimunjawa
+            6 -> R.drawable.kepulauan_togian
+            7 -> R.drawable.karimunjawa
+            8 -> R.drawable.kepulauan_togian
+            9 -> R.drawable.karimunjawa
+            10 -> R.drawable.kepulauan_togian
             // Tambahkan kategori lainnya sesuai kebutuhan
             else -> R.drawable.kepulauan_togian
         }

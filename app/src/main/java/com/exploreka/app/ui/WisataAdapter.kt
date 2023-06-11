@@ -60,6 +60,12 @@ class WisataAdapter(private val wisata: List<Wisata>) : RecyclerView.Adapter<Wis
             2 -> R.drawable.kepulauan_togian
             3 -> R.drawable.karimunjawa
             4 -> R.drawable.kepulauan_togian
+            5 -> R.drawable.karimunjawa
+            6 -> R.drawable.kepulauan_togian
+            7 -> R.drawable.karimunjawa
+            8 -> R.drawable.kepulauan_togian
+            9 -> R.drawable.karimunjawa
+            10 -> R.drawable.kepulauan_togian
             // Tambahkan kategori lainnya sesuai kebutuhan
             else -> R.drawable.karimunjawa
         }

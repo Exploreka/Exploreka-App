@@ -3,16 +3,16 @@ package com.exploreka.app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import com.exploreka.app.R
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.data.PaketWisata
 import com.exploreka.app.ui.PaketWisataAdapter
 
-class PaketWisataPopulerActivity : AppCompatActivity() {
+class PaketWisataReligiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_paket_wisata_populer)
+        setContentView(R.layout.activity_paket_wisata_religi)
 
         val backButton = findViewById<ImageView>(R.id.back_button)
         backButton.setOnClickListener {
@@ -20,7 +20,7 @@ class PaketWisataPopulerActivity : AppCompatActivity() {
             onBackPressed() // Contoh menggunakan onBackPressed()
         }
 
-        val rv_10_paket_wisata: RecyclerView = findViewById(R.id.rv_10_paket_wisata)
+        val rv_10_paket_wisata_religi: RecyclerView = findViewById(R.id.rv_10_paket_wisata_religi)
         val paketWisataList = listOf(
             PaketWisata(1, "Karimun Jawa", "Rp 250.000", "4.6", "123"),
             PaketWisata(2, "Kepulauan Togian", "Rp 750.0000", "4.9", "321"),
@@ -35,10 +35,9 @@ class PaketWisataPopulerActivity : AppCompatActivity() {
             // Tambahkan paket wisata lainnya sesuai kebutuhan
         )
         val paketWisataAdapter = PaketWisataAdapter(paketWisataList)
-        rv_10_paket_wisata.adapter = paketWisataAdapter
+        rv_10_paket_wisata_religi.adapter = paketWisataAdapter
 
         val layoutManager = GridLayoutManager(this, 2)
-        rv_10_paket_wisata.layoutManager = layoutManager
-
+        rv_10_paket_wisata_religi.layoutManager = layoutManager
     }
 }
