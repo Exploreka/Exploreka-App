@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.R
 import com.exploreka.app.data.PaketWisata
-import com.exploreka.app.data.Wisata
 
 class PaketWisataAdapter(private val paketwisata: List<PaketWisata>) : RecyclerView.Adapter<PaketWisataAdapter.ViewHolder>() {
 

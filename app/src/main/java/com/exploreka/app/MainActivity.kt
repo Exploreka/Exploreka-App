@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -118,6 +119,12 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         val fab: FloatingActionButton = findViewById(R.id.floating_action_button)
         fab.setOnClickListener {
             val intent = Intent(this@MainActivity, NavigationActivity::class.java)
+            startActivity(intent)
+        }
+
+        val dss: Button = findViewById(R.id.btn_dss)
+        dss.setOnClickListener {
+            val intent = Intent(this@MainActivity, DssActivity::class.java)
             startActivity(intent)
         }
 
