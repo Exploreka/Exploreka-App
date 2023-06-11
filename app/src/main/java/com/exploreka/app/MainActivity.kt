@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         rv_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
 
-        val WisataPopuler = findViewById<TextView>(R.id.tv_wisata_selengkapnya)
+        val WisataPopuler = findViewById<TextView>(R.id.wisata_selengkapnya)
         WisataPopuler.setOnClickListener {
             // Intent ke aktivitas lain
             val intent = Intent(this, DestinasiWisataPopulerActivity::class.java)
