@@ -46,9 +46,3 @@ data class Partner(
 	@field:SerializedName("fullname_partner")
 	val fullnamePartner: String? = null
 )
-
-//data class Attraction(
-//
-//	@field:SerializedName("name_attraction")
-//	val nameAttraction: String? = null
-//)
