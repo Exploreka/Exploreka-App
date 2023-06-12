@@ -7,23 +7,34 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.data.*
+import com.exploreka.app.retrofit.ApiClient
+import com.exploreka.app.retrofit.ApiService
 import com.exploreka.app.ui.*
+import com.exploreka.app.ui.adapter.AttractionAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
     private lateinit var bottomNavigationView: BottomNavigationView
+
+    private lateinit var attractionAdapter: AttractionAdapter
+    private lateinit var apiService: ApiService
+    private lateinit var rv_wisata: RecyclerView
 
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        apiService = ApiClient.getInstance()
 
         val rvKategori: RecyclerView = findViewById(R.id.rv_kategori)
         val categoryList = listOf(
@@ -49,18 +60,8 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
 
 
         val rv_wisata: RecyclerView = findViewById(R.id.rv_destinasi_wisata)
-        val wisataList = listOf(
-            Wisata(1, "Karimun Jawa","Jepara, Jawa Tengah","4.6","123"),
-            Wisata(2, "Kepulauan Togian","Ambon, Maluku","4.9","321"),
-            Wisata(3, "Karimun Jawa","Jepara, Jawa Tengah","4.6","123"),
-            Wisata(4, "Kepulauan Togian","Ambon, Maluku","4.9","321")
-            // Tambahkan kategori lainnya sesuai kebutuhan
-        )
-        val wisataAdapter = WisataAdapter(wisataList)
-        wisataAdapter.setOnItemClickListener(this)
-        rv_wisata.adapter = wisataAdapter
-        rv_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
+        attractionAdapter = AttractionAdapter(emptyList()) // Mulai dengan daftar kosong
+        rv_wisata.adapter = attractionAdapter
 
         val WisataPopuler = findViewById<TextView>(R.id.tv_wisata_selengkapnya)
         WisataPopuler.setOnClickListener {
@@ -163,6 +164,10 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         }
 
     }
+
+
+
+
     override fun onItemClick(wisata: Wisata) {
         val intent = Intent(this, DetailWisataActivity::class.java)
         intent.putExtra("wisata", wisata)
