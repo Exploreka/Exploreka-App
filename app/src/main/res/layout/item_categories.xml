@@ -1,13 +1,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="64dp"
+    android:layout_width="90dp"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="20dp"
+    android:layout_gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="44dp"
-        android:layout_height="40dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         app:cardBackgroundColor="@color/primary_500"
         app:cardCornerRadius="12dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -16,8 +19,8 @@
 
         <ImageView
             android:id="@+id/categoryIconImageView"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_baseline_headphones_24"
             app:tint="@color/neutral_50"/>
@@ -25,11 +28,11 @@
 
     <TextView
         android:id="@+id/categoryName"
-        android:layout_width="64dp"
+        android:layout_width="56dp"
         android:layout_height="wrap_content"
-        android:text="Kategori"
+        android:text="Pusat\nBelanja"
         android:fontFamily="@font/poppins_medium"
-        android:textSize="8sp"
+        android:textSize="12sp"
         android:layout_marginTop="4dp"
         android:maxLines="2"
         android:ellipsize="end"

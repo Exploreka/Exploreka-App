@@ -20,7 +20,7 @@
 
     <activity
         android:id="@+id/navigationActivity"
-        android:name="com.exploreka.app.NavigationActivity"
+        android:name="com.exploreka.app.ExploreActivity"
         android:label="Main">
         <nav-graph android:value="@navigation/main_navigation" />
     </activity>
