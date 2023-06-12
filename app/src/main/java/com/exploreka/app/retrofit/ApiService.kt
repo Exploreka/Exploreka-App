@@ -16,16 +16,7 @@ interface ApiService {
 
     @GET("tour_package")
     suspend fun getTourPackage(): List<ModelTourPackage>
-
-    @GET("attractions")
-    suspend fun getAttractions(): List<ModelAttraction>
-
-    @GET("tour_package")
-    suspend fun getTourPackage(): List<ModelTourPackage>
-
-
-
-
+    
 
 
 }
