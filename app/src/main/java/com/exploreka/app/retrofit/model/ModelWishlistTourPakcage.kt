@@ -26,11 +26,7 @@ data class ModelWishlistTourPakcage(
 	val updatedAt: String? = null
 )
 
-data class User(
 
-	@field:SerializedName("fullname_user")
-	val fullnameUser: String? = null
-)
 
 data class TourPackage(
 
