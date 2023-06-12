@@ -17,11 +17,20 @@ class AttractionAdapter(var attractions: List<ModelAttraction>) :
     inner class AttractionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val attractionNameTextView: TextView = itemView.findViewById(R.id.tv_title_item)
         private val attractionCityTextView: TextView = itemView.findViewById(R.id.tv_location_item)
+        private val attractionRatingTextView: TextView = itemView.findViewById(R.id.tv_reviewStar_item)
         private val attractionImageView: ImageView = itemView.findViewById(R.id.img_view_item)
 
         fun bind(attraction: ModelAttraction) {
             attractionNameTextView.text = attraction.nameAttraction
             attractionCityTextView.text = attraction.city?.nameCity
+            attractionRatingTextView.text = attraction.descAttraction
+
+            // Set rating text if ratingAvgAttraction is not null
+            attraction.ratingAvgAttraction?.let { rating ->
+                attractionRatingTextView.text = rating.toString()
+            } ?: run {
+                attractionRatingTextView.text = ""
+            }
 
             // Load image using Glide if photoAttraction is not null
             attraction.photoAttraction?.let { photo ->

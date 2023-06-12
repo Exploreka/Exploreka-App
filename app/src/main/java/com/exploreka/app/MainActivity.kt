@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
 
     private lateinit var attractionAdapter: AttractionAdapter
     private lateinit var apiService: ApiService
-    private lateinit var rv_wisata: RecyclerView
+    private lateinit var rv_destinasi_wisata: RecyclerView
 
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -59,9 +60,8 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         rvKategori.layoutManager = layoutManager
 
 
-        val rv_wisata: RecyclerView = findViewById(R.id.rv_destinasi_wisata)
-        attractionAdapter = AttractionAdapter(emptyList()) // Mulai dengan daftar kosong
-        rv_wisata.adapter = attractionAdapter
+        rv_destinasi_wisata = findViewById(R.id.rv_destinasi_wisata)
+        rv_destinasi_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val WisataPopuler = findViewById<TextView>(R.id.tv_wisata_selengkapnya)
         WisataPopuler.setOnClickListener {
@@ -163,9 +163,30 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
             }
         }
 
+        fetchData()
     }
 
 
+    private fun fetchData() {
+        // ...
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val response = apiService.getAttractions()
+                if (response.status == "Success") {
+                    val attractions = response.data
+                    attractionAdapter = attractions?.let { AttractionAdapter(it) }!!
+                    rv_destinasi_wisata.adapter = attractionAdapter
+                } else {
+                    Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
+                Log.e("API_FETCH_ERROR", e.toString())
+            }
+        }
+    }
 
 
     override fun onItemClick(wisata: Wisata) {
