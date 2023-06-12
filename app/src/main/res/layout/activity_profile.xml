@@ -25,7 +25,7 @@
             android:id="@+id/notification_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_notifications_none_24"
+            android:src="@drawable/ic_notifications"
             android:layout_gravity="end"
             android:padding="10dp"
             app:tint="@color/neutral_50" />
@@ -42,99 +42,85 @@
     </androidx.appcompat.widget.Toolbar>
 
     <include
-        android:id="@+id/iv_profile"
-        style="@style/ButtonStyle"
         layout="@layout/item_profile"
-        android:layout_width="320dp"
-        android:layout_height="200dp"
+        android:id="@+id/iv_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
-        android:id="@+id/btn_riwayat_transaksi"
-        style="@style/ButtonStyle.Profile"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:layout_constraintTop_toBottomOf="@id/iv_profile"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="27dp"
-        android:textColor="@color/black"
-        app:iconTint="@color/black"
-        android:text="Riwayat Transaksi"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="12sp"
-        android:layout_marginStart="20dp"
-        app:icon="@drawable/ic_baseline_description_24"
-        app:cornerRadius="12dp"/>
-
-    <Button
-        android:id="@+id/btn_helpdesk"
-        style="@style/ButtonStyle.Profile"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:layout_constraintTop_toBottomOf="@id/btn_riwayat_transaksi"
-        app:layout_constraintStart_toStartOf="@id/btn_riwayat_transaksi"
-        android:layout_marginTop="0dp"
-        android:text="Pusat Bantuan"
-        android:textColor="@color/black"
-        app:iconTint="@color/black"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="12sp"
-        android:layout_marginEnd="8dp"
-        app:icon="@drawable/ic_baseline_help_outline_24"
-        app:cornerRadius="12dp"/>
-
-    <Button
-        android:id="@+id/btn_setting"
-        style="@style/ButtonStyle.Profile"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:layout_constraintTop_toBottomOf="@id/btn_helpdesk"
-        app:layout_constraintStart_toStartOf="@id/btn_helpdesk"
-        android:layout_marginTop="0dp"
-        android:text="Pengaturan"
-        android:textColor="@color/black"
-        app:iconTint="@color/black"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="12sp"
-        android:layout_marginEnd="8dp"
-        app:icon="@drawable/ic_baseline_settings_24"
-        app:cornerRadius="12dp"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bottom_navigation_background"
-        android:elevation="8dp"
-        app:itemIconTint="@color/grey"
-        app:itemTextColor="@color/grey"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_navigation_menu"
+        android:orientation="vertical"
+        android:layout_marginTop="36dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            style="@style/ButtonStyle.Profile"
+            android:id="@+id/btn_riwayat_transaksi"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Riwayat Transaksi"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="16sp"
+            android:includeFontPadding="false"
+            android:textColor="@color/neutral_900"
+            android:textAlignment="textStart"
+            android:drawableLeft="@drawable/ic_description"
+            android:drawableTint="@color/neutral_900"/>
+
+        <Button
+            style="@style/ButtonStyle.Profile"
+            android:id="@+id/btn_helpdesk"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Pusat Bantuan"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="16sp"
+            android:includeFontPadding="false"
+            android:textColor="@color/neutral_900"
+            android:textAlignment="textStart"
+            android:drawableLeft="@drawable/ic_help"
+            android:drawableTint="@color/neutral_900"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            style="@style/ButtonStyle.Profile"
+            android:id="@+id/btn_setting"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Pengaturan"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="16sp"
+            android:includeFontPadding="false"
+            android:textColor="@color/neutral_900"
+            android:textAlignment="textStart"
+            android:drawableLeft="@drawable/ic_setting"
+            android:drawableTint="@color/neutral_900"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+
+    <Button
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Keluar"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <include
+        layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/FAB.WhiteText"
-        app:borderWidth="5dp"
-        android:background="@drawable/rounded_fab"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialComponents.LargeComponent"
-        app:backgroundTint="@color/primary_500"
-        android:src="@drawable/ic_baseline_explore_24"
-        app:layout_constraintTop_toTopOf="@id/bottom_navigation"
-        app:layout_constraintStart_toStartOf="@id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="@id/bottom_navigation"
-        android:layout_marginTop="-16dp" /> <!-- Sesuaikan dengan nilai yang diinginkan -->
-
-
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

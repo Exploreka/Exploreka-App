@@ -7,11 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.R
-import com.exploreka.app.data.Navigation
-import com.exploreka.app.data.Wisata
+import com.exploreka.app.data.Explore
 
 
-class NavigationAdapter(private val navigation: List<Navigation>) : RecyclerView.Adapter<NavigationAdapter.ViewHolder>() {
+class NavigationAdapter(private val navigation: List<Explore>) : RecyclerView.Adapter<NavigationAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_navigation , parent, false)
@@ -32,7 +31,7 @@ class NavigationAdapter(private val navigation: List<Navigation>) : RecyclerView
         private val ReviewTextView: TextView = itemView.findViewById(R.id.tv_reviewStar_navigation)
         private val iconView : ImageView = itemView.findViewById(R.id.imageview_navigation)
 
-        fun bind(navigation: Navigation) {
+        fun bind(navigation: Explore) {
             nameTextView.text = navigation.name
             ReviewTextView.text = navigation.review_star
             iconView.setImageResource(getIconResource(navigation.photo))

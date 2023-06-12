@@ -33,23 +33,30 @@
                     android:id="@+id/exploreka"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
-                    android:src="@drawable/exploreka" />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginVertical="12dp"
+                    android:src="@drawable/exploreka"
+                    android:contentDescription="exploreka image"/>
 
-                <ImageView
+                <ImageButton
+                    style="?attr/materialIconButtonStyle"
                     android:id="@+id/notification_button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="48dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_baseline_notifications_none_24"/>
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_notifications"
+                    android:contentDescription="button notification"/>
 
-                <ImageView
+                <ImageButton
+                    style="?attr/materialIconButtonStyle"
                     android:id="@+id/help_button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="48dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_baseline_help_outline_24"/>
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_help"
+                    android:contentDescription="button help"/>
             </androidx.appcompat.widget.Toolbar>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -133,9 +140,9 @@
                     style="@style/Widget.MaterialComponents.Toolbar.Primary"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
+                    android:backgroundTint="@color/neutral_50"
                     android:hint="Jawa tengah"
                     android:contentDescription="search bar"
-                    android:backgroundTint="@color/neutral_50"
                     app:navigationIcon="@drawable/ic_filter"/>
             </LinearLayout>
 
@@ -144,7 +151,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="20dp"
                 app:layout_constraintTop_toBottomOf="@id/searchview_layout"
                 app:layout_constraintStart_toStartOf="parent">
@@ -153,6 +159,7 @@
                     android:id="@+id/tv_kategori"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
                     android:text="Kategori"
                     android:textSize="16sp"
                     android:fontFamily="@font/poppins_bold"
@@ -162,6 +169,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintTop_toBottomOf="@id/tv_kategori"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent">
@@ -402,33 +410,11 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <include
+        layout="@layout/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bottom_navigation_background"
-        android:elevation="8dp"
-        app:itemIconTint="@color/grey"
-        app:itemTextColor="@color/grey"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_navigation_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        style="@style/FAB.WhiteText"
-        android:id="@+id/floating_action_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_fab"
-        android:src="@drawable/ic_baseline_explore_24"
-        android:layout_marginTop="-16dp"
-        android:contentDescription="button navigation"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialComponents.LargeComponent"
-        app:backgroundTint="@color/primary_500"
-        app:borderWidth="5dp"
-        app:layout_constraintTop_toTopOf="@id/bottom_navigation"
-        app:layout_constraintStart_toStartOf="@id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="@id/bottom_navigation"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

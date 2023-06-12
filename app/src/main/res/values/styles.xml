@@ -20,9 +20,9 @@
     </style>
 
     <style name="ButtonStyle.Favorite" parent="Widget.Material3.Button">
-        <item name="android:background">@drawable/ic_baseline_favorite_24</item>
+        <item name="android:background">@drawable/ic_wishlist</item>
         <item name="android:elevation">0dp</item>
-        <item name="android:icon">@drawable/ic_baseline_favorite_24</item>
+        <item name="android:icon">@drawable/ic_wishlist</item>
         <item name="backgroundTint">@color/black</item>
         <item name="android:stateListAnimator">@null</item>
     </style>

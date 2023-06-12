@@ -3,41 +3,40 @@ package com.exploreka.app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.exploreka.app.data.Explore
+import com.exploreka.app.ui.NavigationAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ProfileActivity : AppCompatActivity() {
+class ExploreActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
-        val fab: FloatingActionButton = findViewById(R.id.floating_action_button)
-        fab.setOnClickListener {
-            val intent = Intent(this@ProfileActivity , ExploreActivity::class.java)
-            startActivity(intent)
-        }
+        setContentView(R.layout.activity_explore)
 
         val notif: ImageView = findViewById(R.id.notification_button)
         notif.setOnClickListener {
-            val intent = Intent(this@ProfileActivity, NotificationActivity::class.java)
+            val intent = Intent(this@ExploreActivity, NotificationActivity::class.java)
             startActivity(intent)
         }
 
-        val help: ImageView = findViewById(R.id.help_button)
-        help.setOnClickListener {
-            val intent = Intent(this@ProfileActivity, HelpCenterActivity::class.java)
-            startActivity(intent)
-        }
+        val rv_explore : RecyclerView = findViewById(R.id.rv_navigation)
+        val exploreList = listOf(
+            Explore(1, "Karimun Jawa","4.5",),
+            Explore(2, "Kepulauan Togian","4.7"),
+            Explore(3, "Karimun Jawa","4.5"),
+            Explore(4, "Kepulauan Togian","4.5")
+            // Tambahkan kategori lainnya sesuai kebutuhan
+        )
+        val navigationAdapter = NavigationAdapter(exploreList)
+        rv_explore.adapter = navigationAdapter
+        rv_explore.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        val setting: Button = findViewById(R.id.btn_setting)
-        setting.setOnClickListener {
-            val intent = Intent(this@ProfileActivity , SettingActivity::class.java)
-            startActivity(intent)
-        }
+
+
         bottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigationView.selectedItemId = R.id.menu_profile
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_home -> {
@@ -57,6 +56,7 @@ class ProfileActivity : AppCompatActivity() {
                 }
                 R.id.menu_profile -> {
                     menuItem.setIcon(R.drawable.bottom_nav_profile_selector)
+                    startActivity(Intent(this, ProfileActivity::class.java))
                     true
                 }
                 else -> false

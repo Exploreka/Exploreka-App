@@ -1,22 +1,23 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="320dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:layout_height="200dp"
     app:cardBackgroundColor="@color/primary_500"
-    app:cardElevation="4dp"
     app:cardCornerRadius="12dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:paddingVertical="24dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_centerHorizontal="true"
             android:src="@drawable/avatar" />
 
@@ -24,26 +25,20 @@
             android:id="@+id/text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/profile_image"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:textColor="@android:color/white"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="16sp"
-            android:text="Eleanor Pena" />
+            android:text="Eleanor Pena"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="20sp"
+            android:textColor="@color/neutral_50"
+            android:layout_marginTop="16dp"/>
 
         <TextView
             android:id="@+id/text_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_name"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:textColor="@android:color/white"
+            android:text="eleanoripena@example.com"
             android:fontFamily="@font/poppins_regular"
             android:textSize="16sp"
-            android:text="eleanoripena@example.com" />
-
-    </RelativeLayout>
-
+            android:textColor="@android:color/white"
+            android:layout_marginTop="14dp"/>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

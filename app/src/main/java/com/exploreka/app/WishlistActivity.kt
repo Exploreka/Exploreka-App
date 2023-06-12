@@ -52,7 +52,7 @@ class WishlistActivity : AppCompatActivity() {
         }
 
         fab.setOnClickListener {
-            val intent = Intent(this@WishlistActivity, NavigationActivity::class.java)
+            val intent = Intent(this@WishlistActivity, ExploreActivity::class.java)
             startActivity(intent)
         }
         bottomNavigationView = findViewById(R.id.bottom_navigation)
@@ -60,23 +60,22 @@ class WishlistActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_home -> {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
+                    menuItem.setIcon(R.drawable.bottom_nav_home_selector)
+                    startActivity(Intent(this, MainActivity::class.java))
                     true
                 }
                 R.id.menu_package -> {
-                    val intent = Intent(this, PackageActivity::class.java)
-                    startActivity(intent)
+                    menuItem.setIcon(R.drawable.bottom_nav_package_selector)
+                    startActivity(Intent(this, PackageActivity::class.java))
                     true
                 }
                 R.id.menu_wishlist -> {
-                    val intent = Intent(this, WishlistActivity::class.java)
-                    startActivity(intent)
+                    menuItem.setIcon(R.drawable.bottom_nav_wishlist_selector)
                     true
                 }
                 R.id.menu_profile -> {
-                    val intent = Intent(this, ProfileActivity::class.java)
-                    startActivity(intent)
+                    menuItem.setIcon(R.drawable.bottom_nav_profile_selector)
+                    startActivity(Intent(this, ProfileActivity::class.java))
                     true
                 }
                 else -> false

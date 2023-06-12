@@ -80,7 +80,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/tv_touristSpotName"
+                            android:id="@+id/tv_package_touristSpotName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Taman Nasional Kelimutu"
@@ -88,14 +88,29 @@
                             android:textSize="16sp"
                             android:fontFamily="@font/poppins_bold"/>
 
-                        <TextView
-                            android:id="@+id/lokasiTextView"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Nusa Tenggara Timur"
-                            android:textSize="12sp"
-                            android:textColor="@color/primary_500"
-                            android:fontFamily="@font/poppins_medium"/>
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rp"
+                                android:textSize="12sp"
+                                android:textColor="@color/secondary_500"
+                                android:fontFamily="@font/poppins_medium"
+                                android:paddingEnd="4dp"/>
+
+                            <TextView
+                                android:id="@+id/tv_package_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15.000"
+                                android:textSize="12sp"
+                                android:textColor="@color/secondary_500"
+                                android:fontFamily="@font/poppins_medium"/>
+                        </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/cons1_star"
@@ -110,7 +125,7 @@
                                 android:layout_height="wrap_content"/>
 
                             <TextView
-                                android:id="@+id/tv_reviewStar_item"
+                                android:id="@+id/tv_package_reviewStar_item"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="4.8 (72 Ulasan)"
@@ -134,55 +149,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="1dp"
-                android:background="@color/neutral_50"
-                app:layout_constraintTop_toBottomOf="@id/header"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <Button
-                    style="@style/Widget.Material3.Button.TextButton.Icon"
-                    android:id="@+id/btn_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:text="Lokasi"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="12sp"
-                    android:textColor="@color/neutral_900"
-                    android:gravity="start|center"
-                    android:drawableLeft="@drawable/ic_location"
-                    android:drawableRight="@drawable/ic_arrow_right"
-                    app:iconPadding="12dp"/>
-
-                <TextView
-                    android:id="@+id/tv_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Terletak di wilayah Kabupaten Ende, Provinsi Nusa Tenggara Timur."
-                    android:fontFamily="@font/poppins_medium"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginEnd="16dp"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@color/neutral_200" />
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/openingHours"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="1dp"
                 android:background="@color/neutral_50"
-                app:layout_constraintTop_toBottomOf="@id/location"
+                app:layout_constraintTop_toBottomOf="@id/header"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <Button
@@ -235,74 +208,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/facility"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="1dp"
-                android:background="@color/neutral_50"
-                app:layout_constraintTop_toBottomOf="@id/openingHours"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <Button
-                    style="@style/Widget.Material3.Button.TextButton.Icon"
-                    android:id="@+id/btn_facility"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:text="Fasilitas"
-                    android:fontFamily="@font/poppins_bold"
-                    android:textSize="12sp"
-                    android:textColor="@color/neutral_900"
-                    android:gravity="start|center"
-                    android:drawableLeft="@drawable/ic_facility"
-                    android:drawableRight="@drawable/ic_arrow_right"
-                    app:iconPadding="12dp"/>
-
-                <com.google.android.material.chip.ChipGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@color/neutral_50">
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.Material3.Chip.Suggestion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Kamar Mandi"
-                        android:background="@drawable/chip_selector" />
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.Material3.Chip.Suggestion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Restoran"
-                        android:background="@drawable/chip_selector" />
-
-                    <com.google.android.material.chip.Chip
-                        style="@style/Widget.Material3.Chip.Suggestion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Penginapan"
-                        android:background="@drawable/chip_selector" />
-
-                </com.google.android.material.chip.ChipGroup>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@color/neutral_200" />
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="1dp"
                 android:background="@color/neutral_50"
-                app:layout_constraintTop_toBottomOf="@id/facility"
+                app:layout_constraintTop_toBottomOf="@id/openingHours"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <Button
@@ -343,7 +255,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="1dp"
-                android:layout_marginBottom="40dp"
                 android:background="@color/neutral_50"
                 app:layout_constraintTop_toBottomOf="@id/description"
                 app:layout_constraintStart_toStartOf="parent">
@@ -381,6 +292,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
                 android:layout_marginTop="72dp"
+                android:layout_marginBottom="40dp"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -412,9 +324,9 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="60dp"
         android:background="@color/neutral_50"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center"
         android:elevation="12dp"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -425,11 +337,9 @@
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="360 VIEW"
+            android:text="Beli sekarang"
             android:fontFamily="@font/poppins_medium"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:backgroundTint="@color/secondary_500"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-

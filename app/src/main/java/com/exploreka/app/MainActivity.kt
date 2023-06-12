@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
 
         val fab: FloatingActionButton = findViewById(R.id.floating_action_button)
         fab.setOnClickListener {
-            val intent = Intent(this@MainActivity, NavigationActivity::class.java)
+            val intent = Intent(this@MainActivity, ExploreActivity::class.java)
             startActivity(intent)
         }
 
@@ -134,23 +134,22 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_home -> {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
+                    menuItem.setIcon(R.drawable.bottom_nav_home_selector)
                     true
                 }
                 R.id.menu_package -> {
-                    val intent = Intent(this, PackageActivity::class.java)
-                    startActivity(intent)
+                    menuItem.setIcon(R.drawable.bottom_nav_package_selector)
+                    startActivity(Intent(this, PackageActivity::class.java))
                     true
                 }
                 R.id.menu_wishlist -> {
-                    val intent = Intent(this, WishlistActivity::class.java)
-                    startActivity(intent)
+                    menuItem.setIcon(R.drawable.bottom_nav_wishlist_selector)
+                    startActivity(Intent(this, WishlistActivity::class.java))
                     true
                 }
                 R.id.menu_profile -> {
-                    val intent = Intent(this, ProfileActivity::class.java)
-                    startActivity(intent)
+                    menuItem.setIcon(R.drawable.bottom_nav_profile_selector)
+                    startActivity(Intent(this, ProfileActivity::class.java))
                     true
                 }
                 else -> false
