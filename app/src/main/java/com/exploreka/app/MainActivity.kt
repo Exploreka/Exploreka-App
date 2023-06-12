@@ -18,14 +18,17 @@ import com.exploreka.app.retrofit.ApiClient
 import com.exploreka.app.retrofit.ApiService
 import com.exploreka.app.ui.*
 import com.exploreka.app.ui.adapter.AttractionAdapter
+import com.exploreka.app.ui.adapter.TourPackageAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
     private lateinit var bottomNavigationView: BottomNavigationView
 
     private lateinit var attractionAdapter: AttractionAdapter
+    private lateinit var tourpackageAdapter: TourPackageAdapter
     private lateinit var apiService: ApiService
     private lateinit var rv_destinasi_wisata: RecyclerView
 
@@ -72,15 +75,6 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
 
 
         val rv_paket_wisata: RecyclerView = findViewById(R.id.rv_paket_wisata)
-        val paketWisataList = listOf(
-            PaketWisata(1, "Karimun Jawa", "Rp 250.000", "4.6", "123"),
-            PaketWisata(2, "Kepulauan Togian", "Rp 750.0000", "4.9", "321"),
-            PaketWisata(3, "Karimun Jawa", "Rp 250.000", "4.6", "123"),
-            PaketWisata(4, "Kepulauan Togian", "Rp 750.000", "4.9", "321")
-            // Tambahkan paket wisata lainnya sesuai kebutuhan
-        )
-        val paketWisataAdapter = PaketWisataAdapter(paketWisataList)
-        rv_paket_wisata.adapter = paketWisataAdapter
         rv_paket_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val PaketPopuler = findViewById<TextView>(R.id.tv_paket_selengkapnya)
@@ -163,11 +157,12 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
             }
         }
 
-        fetchData()
+        fetchDataWisata()
+        fetchDataPaket()
     }
 
 
-    private fun fetchData() {
+    private fun fetchDataWisata() {
         // ...
 
         CoroutineScope(Dispatchers.Main).launch {
@@ -177,6 +172,27 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
                     val attractions = response.data
                     attractionAdapter = attractions?.let { AttractionAdapter(it) }!!
                     rv_destinasi_wisata.adapter = attractionAdapter
+                } else {
+                    Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
+                Log.e("API_FETCH_ERROR", e.toString())
+            }
+        }
+    }
+
+    private fun fetchDataPaket() {
+        // ...
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val response = apiService.getTourPackage()
+                if (response.status == "Success") {
+                    val tourpackage = response.data
+                    tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
+                    rv_paket_wisata.adapter = tourpackageAdapter
                 } else {
                     Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
                         .show()
