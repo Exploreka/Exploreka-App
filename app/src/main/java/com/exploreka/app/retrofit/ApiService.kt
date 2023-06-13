@@ -16,6 +16,9 @@ interface ApiService {
     @GET("tour_package")
     suspend fun getTourPackage(): TourPackageResponse
 
+    @GET("posts")
+    suspend fun getArtikel(): ArtikelResponse
+
     @GET("wishlist_attraction:/id")
     suspend fun getWishlistAttractions(): List<ModelWishlistAttraction>
 

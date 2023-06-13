@@ -17,6 +17,7 @@ import com.exploreka.app.data.*
 import com.exploreka.app.retrofit.ApiClient
 import com.exploreka.app.retrofit.ApiService
 import com.exploreka.app.ui.*
+import com.exploreka.app.ui.adapter.ArtikelAdapter
 import com.exploreka.app.ui.adapter.AttractionAdapter
 import com.exploreka.app.ui.adapter.TourPackageAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -29,8 +30,11 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
 
     private lateinit var attractionAdapter: AttractionAdapter
     private lateinit var tourpackageAdapter: TourPackageAdapter
+    private lateinit var artikelAdapter: ArtikelAdapter
     private lateinit var apiService: ApiService
     private lateinit var rv_destinasi_wisata: RecyclerView
+    private lateinit var rv_paket_wisata: RecyclerView
+    private lateinit var rv_artikel_inspiratif: RecyclerView
 
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -74,7 +78,7 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         }
 
 
-        val rv_paket_wisata: RecyclerView = findViewById(R.id.rv_paket_wisata)
+        rv_paket_wisata = findViewById(R.id.rv_paket_wisata)
         rv_paket_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val PaketPopuler = findViewById<TextView>(R.id.tv_paket_selengkapnya)
@@ -85,16 +89,7 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
         }
 
 
-        val rv_artikel_inspiratif: RecyclerView = findViewById(R.id.rv_artikel)
-        val artikelList = listOf(
-            Artikel(1, "Karimun Jawa, Pesona Indah di Tanah Jawa"),
-            Artikel(2, "Kepulauan Togian, Pesona Indah di Tanah Maluku"),
-            Artikel(3, "Karimun Jawa, Pesona Indah di Tanah Jawa"),
-            Artikel(4, "Kepulauan Togian,Pesona Indah di Tanah Maluku")
-            // Tambahkan paket wisata lainnya sesuai kebutuhan
-        )
-        val artikelAdapter = ArtikelAdapter(artikelList)
-        rv_artikel_inspiratif.adapter = artikelAdapter
+        rv_artikel_inspiratif = findViewById(R.id.rv_artikel)
         rv_artikel_inspiratif.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val ArtikelPopuler = findViewById<TextView>(R.id.tv_artikel_selengkapnya)
@@ -158,6 +153,7 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
 
         fetchDataWisata()
         fetchDataPaket()
+        fetchDataArtikel()
     }
 
 
@@ -192,6 +188,27 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
                     val tourpackage = response.data
                     tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
                     rv_paket_wisata.adapter = tourpackageAdapter
+                } else {
+                    Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
+                Log.e("API_FETCH_ERROR", e.toString())
+            }
+        }
+    }
+
+    private fun fetchDataArtikel() {
+        // ...
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val response = apiService.getArtikel()
+                if (response.status == "Success") {
+                    val artikel = response.data
+                    artikelAdapter = artikel?.let { ArtikelAdapter(it) }!!
+                    rv_artikel_inspiratif.adapter = artikelAdapter
                 } else {
                     Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
                         .show()
