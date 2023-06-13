@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="horizontal"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/img_reviewer">
+    app:layout_constraintTop_toTopOf="parent">
 
     <ImageView
         android:id="@+id/img_star1"

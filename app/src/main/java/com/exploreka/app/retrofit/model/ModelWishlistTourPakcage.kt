@@ -19,8 +19,8 @@ data class ModelWishlistTourPakcage(
 	@field:SerializedName("id_tour_package")
 	val idTourPackage: Int? = null,
 
-	@field:SerializedName("user")
-	val user: User? = null,
+//	@field:SerializedName("user")
+//	val user: User? = null,
 
 	@field:SerializedName("updatedAt")
 	val updatedAt: String? = null
