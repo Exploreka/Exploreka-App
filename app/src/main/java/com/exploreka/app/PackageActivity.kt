@@ -144,7 +144,6 @@ class PackageActivity : AppCompatActivity() {
         }
     }
     private fun fetchDataPaketReligi() {
-        // ...
 
         CoroutineScope(Dispatchers.Main).launch {
             try {
