@@ -204,7 +204,7 @@
                     android:id="@+id/btn_openingHours"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:text="Jam Buka - Jam Tutup"
+                    android:text="Jam Buka "
                     android:fontFamily="@font/poppins_bold"
                     android:textSize="12sp"
                     android:textColor="@color/neutral_900"
@@ -222,52 +222,40 @@
 
                     <TextView
                         android:id="@+id/tv_open_day"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Jam Buka"
-                        android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
-                        android:textSize="12sp"/>
+                        android:text="Buka"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tv_open_time"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="07.00 "
+                        android:text="07.00"
+                        android:layout_marginStart="180dp"
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="12sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_close_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginEnd="16dp">
 
                     <TextView
-                        android:id="@+id/tv_close_day"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Jam Tutup"
+                        android:text=" - "
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="12sp"/>
 
                     <TextView
                         android:id="@+id/tv_close_time"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="17.00 "
+                        android:text="09.00"
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="12sp"/>
+
                 </LinearLayout>
 
                 <View
@@ -369,7 +357,9 @@
                     android:text="Taman Nasional Kelimutu adalah salah satu tujuan wisata terkenal di Indonesia. Terletak di Pulau Flores, ..."
                     android:fontFamily="@font/poppins_medium"
                     android:textSize="12sp"
-                    android:maxLines="2"
+                    android:maxLines="3"
+                    android:justificationMode="inter_word"
+                    android:ellipsize="end"
                     android:textColor="@color/black"
                     android:layout_marginStart="50dp"
                     android:layout_marginEnd="16dp"/>
