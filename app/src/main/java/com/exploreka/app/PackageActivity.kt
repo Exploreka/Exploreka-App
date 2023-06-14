@@ -3,20 +3,39 @@ package com.exploreka.app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.data.PaketWisata
+import com.exploreka.app.retrofit.ApiClient
+import com.exploreka.app.retrofit.ApiService
 import com.exploreka.app.ui.PaketWisataAdapter
+import com.exploreka.app.ui.adapter.ArtikelAdapter
+import com.exploreka.app.ui.adapter.AttractionAdapter
+import com.exploreka.app.ui.adapter.TourPackageAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class PackageActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var tourpackageAdapter: TourPackageAdapter
+    private lateinit var apiService: ApiService
+    private lateinit var rv_wisata_murah : RecyclerView
+    private lateinit var rv_wisata_religi : RecyclerView
+    private lateinit var rv_paket_gunung : RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_package)
+
+        apiService = ApiClient.getInstance()
+
         val fab: FloatingActionButton = findViewById(R.id.floating_action_button)
         fab.setOnClickListener {
             val intent = Intent(this@PackageActivity, ExploreActivity::class.java)
@@ -25,17 +44,8 @@ class PackageActivity : AppCompatActivity() {
 
 
 
-        val rv_paket_wisata: RecyclerView = findViewById(R.id.rv_paket_wisata_murah)
-        val paketWisataList = listOf(
-            PaketWisata(1, "Karimun Jawa", "Rp 250.000", "4.6", "123"),
-            PaketWisata(2, "Kepulauan Togian", "Rp 750.0000", "4.9", "321"),
-            PaketWisata(3, "Karimun Jawa", "Rp 250.000", "4.6", "123"),
-            PaketWisata(4, "Kepulauan Togian", "Rp 750.000", "4.9", "321")
-            // Tambahkan paket wisata lainnya sesuai kebutuhan
-        )
-        val paketWisataAdapter = PaketWisataAdapter(paketWisataList)
-        rv_paket_wisata.adapter = paketWisataAdapter
-        rv_paket_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rv_wisata_murah  = findViewById(R.id.rv_paket_wisata_murah)
+        rv_wisata_murah.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
 
         val PaketMurah = findViewById<TextView>(R.id.tv_selengkapnya_murah)
@@ -46,8 +56,7 @@ class PackageActivity : AppCompatActivity() {
         }
 
 
-        val rv_wisata_religi : RecyclerView = findViewById(R.id.rv_paket_wisata_religi)
-        rv_wisata_religi.adapter = paketWisataAdapter
+        rv_wisata_religi  = findViewById(R.id.rv_paket_wisata_religi)
         rv_wisata_religi.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val PaketReligi = findViewById<TextView>(R.id.tv_selengkapnya_religi)
@@ -57,8 +66,7 @@ class PackageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val rv_paket_gunung : RecyclerView = findViewById(R.id.rv_paket_wisata_gunung)
-        rv_paket_gunung.adapter = paketWisataAdapter
+        rv_paket_gunung = findViewById(R.id.rv_paket_wisata_gunung)
         rv_paket_gunung.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
 
@@ -105,6 +113,72 @@ class PackageActivity : AppCompatActivity() {
                     true
                 }
                 else -> false
+            }
+        }
+        fetchDataPaketMurah()
+        fetchDataPaketReligi()
+        fetchDataPaketGunung()
+
+    }
+    private fun fetchDataPaketMurah() {
+        // ...
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val response = apiService.getTourPackage()
+                if (response.status == "Success") {
+                    val tourpackage = response.data
+                    tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
+                    rv_wisata_murah.adapter = tourpackageAdapter
+                } else {
+                    Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
+                    .show()
+                Log.e("API_FETCH_ERROR", e.toString())
+            }
+        }
+    }
+    private fun fetchDataPaketReligi() {
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val response = apiService.getTourPackage()
+                if (response.status == "Success") {
+                    val tourpackage = response.data
+                    tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
+                    rv_wisata_religi.adapter = tourpackageAdapter
+                } else {
+                    Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
+                    .show()
+                Log.e("API_FETCH_ERROR", e.toString())
+            }
+        }
+    }
+    private fun fetchDataPaketGunung() {
+        // ...
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val response = apiService.getTourPackage()
+                if (response.status == "Success") {
+                    val tourpackage = response.data
+                    tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
+                    rv_paket_gunung.adapter = tourpackageAdapter
+                } else {
+                    Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
+                    .show()
+                Log.e("API_FETCH_ERROR", e.toString())
             }
         }
     }

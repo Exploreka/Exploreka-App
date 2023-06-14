@@ -17,12 +17,17 @@ interface ApiService {
     @GET("tour_package")
     suspend fun getTourPackage(): TourPackageResponse
 
+    @GET("posts")
+    suspend fun getArtikel(): ArtikelResponse
+
     @GET("wishlist_attraction:/id")
     suspend fun getWishlistAttractions(): List<ModelWishlistAttraction>
 
     @GET("wishlist_tour_package/:id")
     suspend fun getWishlistTourPackage(): List<ModelWishlistTourPakcage>
 
+    @GET("attractions/{attractionId}")
+    suspend fun getAttractionById(@Path("attractionId") attractionId: String): DetailAttractionResponse
 
 
 }
