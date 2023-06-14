@@ -16,8 +16,8 @@ data class ModelWishlistAttraction(
 	@field:SerializedName("id_user")
 	val idUser: Int? = null,
 
-	@field:SerializedName("user")
-	val user: User? = null,
+//	@field:SerializedName("user")
+//	val user: User? = null,
 
 	@field:SerializedName("id_attraction")
 	val idAttraction: Int? = null,

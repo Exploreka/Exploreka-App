@@ -82,7 +82,6 @@
                     app:navigationIcon="@drawable/ic_filter"/>
             </LinearLayout>
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_artikel"
                 android:layout_width="match_parent"
@@ -97,8 +96,6 @@
                 app:layout_constraintTop_toBottomOf="@id/searchview_layout"
                 app:layout_constraintStart_toStartOf="@id/searchview_layout" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

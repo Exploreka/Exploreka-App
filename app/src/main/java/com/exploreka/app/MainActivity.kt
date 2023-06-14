@@ -21,8 +21,11 @@ import com.exploreka.app.ui.adapter.AttractionAdapter
 import com.exploreka.app.ui.adapter.TourPackageAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.search.SearchBar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -158,6 +161,80 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
 
         fetchDataWisata()
         fetchDataPaket()
+
+//        val searchBar = findViewById<SearchBar>(R.id.search_bar)
+//
+//        searchBar.setOnSearchActionListener(object : SearchBar.OnSearchActionListener {
+//            override fun onSearchStateChanged(enabled: Boolean) {
+//                // Tindakan yang diambil saat status pencarian berubah
+//            }
+//
+//            override fun onSearchConfirmed(text: CharSequence) {
+//                val attractionName = text.toString()
+//                searchAttractionByName(attractionName)
+//            }
+//
+//            override fun onButtonClicked(buttonCode: Int) {
+//                if (buttonCode == SearchBar.BUTTON_NAVIGATION) {
+//                    // Tindakan saat tombol navigasi di search bar ditekan
+//                }
+//            }
+//        })
+//
+//        private fun searchAttractionByName(attractionName: String) {
+//            // Panggil fungsi pencarian API di sini dan lakukan penanganan hasil pencarian
+//            // Misalnya, Anda dapat menggunakan Retrofit untuk melakukan pemanggilan API
+//
+//            // Buat instance dari Retrofit
+//            val retrofit = Retrofit.Builder()
+//                .baseUrl(BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build()
+//
+//            // Buat instance ApiService menggunakan Retrofit
+//            val apiService = retrofit.create(ApiService::class.java)
+//
+//            // Panggil endpoint pencarian di ApiService
+//            val call = apiService.searchAttractionsByName(attractionName)
+//
+//            // Lakukan pemanggilan API secara asynchronous menggunakan enqueue
+//            call.enqueue(object : Callback<AttractionsResponse> {
+//                override fun onResponse(
+//                    call: Call<AttractionsResponse>,
+//                    response: Response<AttractionsResponse>
+//                ) {
+//                    if (response.isSuccessful) {
+//                        val attractionsResponse = response.body()
+//                        if (attractionsResponse?.status == "Success") {
+//                            val attractions = attractionsResponse.data
+//                            // Lakukan sesuatu dengan daftar tempat wisata yang ditemukan
+//                            for (attraction in attractions) {
+//                                val attractionName = attraction.nameAttraction
+//                                val cityName = attraction.city?.nameCity
+//                                val photoAttraction = attraction.photoAttraction
+//
+//                                // Tampilkan informasi tempat wisata kepada pengguna
+//                                println("Nama Tempat Wisata: $attractionName")
+//                                println("Kota: $cityName")
+//                                println("Foto: $photoAttraction")
+//                                println()
+//                            }
+//                        } else {
+//                            val errorMessage = attractionsResponse?.message
+//                            println("Error: $errorMessage")
+//                        }
+//                    } else {
+//                        println("Error: ${response.message()}")
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<AttractionsResponse>, t: Throwable) {
+//                    t.printStackTrace()
+//                }
+//            })
+//        }
+
+
     }
 
 

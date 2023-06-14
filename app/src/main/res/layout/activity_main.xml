@@ -96,7 +96,7 @@
                             android:id="@+id/tv_username"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Eleanor!"
+                            android:text="Explorean!"
                             android:fontFamily="@font/poppins_bold"
                             android:textSize="24sp"
                             android:includeFontPadding="false"
@@ -138,6 +138,7 @@
 
                 <com.google.android.material.search.SearchBar
                     style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                    android:id="@+id/search_bar"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:backgroundTint="@color/neutral_50"
