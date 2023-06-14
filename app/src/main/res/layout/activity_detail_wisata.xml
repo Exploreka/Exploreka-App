@@ -35,12 +35,14 @@
                         android:id="@+id/iv_detail_wisata"
                         android:layout_width="match_parent"
                         android:layout_height="204dp"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/ic_baseline_image_24"  />
 
                     <ImageButton
                         android:id="@+id/btn_back"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:src="@drawable/ic_baseline_arrow_back_ios_24"
                         android:backgroundTint="@color/transparan"
                         android:contentDescription="button back"/>
@@ -83,7 +85,7 @@
                             android:id="@+id/tv_touristSpotName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Taman Nasional Kelimutu"
+                            android:text="Nama Tempat Wisata"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:fontFamily="@font/poppins_bold"/>
@@ -92,7 +94,7 @@
                             android:id="@+id/lokasiTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Nusa Tenggara Timur"
+                            android:text="Lokasi"
                             android:textSize="12sp"
                             android:textColor="@color/primary_500"
                             android:fontFamily="@font/poppins_medium"/>
@@ -157,22 +159,34 @@
                     android:drawableRight="@drawable/ic_arrow_right"
                     app:iconPadding="12dp"/>
 
-                <TextView
-                    android:id="@+id/tv_location"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Terletak di wilayah Kabupaten Ende, Provinsi Nusa Tenggara Timur."
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tempat wisata terletak di wilayah "
                     android:fontFamily="@font/poppins_medium"
                     android:textSize="12sp"
                     android:textColor="@color/black"
-                    android:layout_marginStart="42dp"
-                    android:layout_marginEnd="16dp"/>
+                    android:layout_marginStart="42dp" />
 
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="blablabla "
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"/>
+            </LinearLayout>
                 <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@color/neutral_200" />
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/neutral_200" />
             </LinearLayout>
 
             <LinearLayout
@@ -190,16 +204,16 @@
                     android:id="@+id/btn_openingHours"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:text="Jam Buka"
+                    android:text="Jam Buka - Jam Tutup"
                     android:fontFamily="@font/poppins_bold"
                     android:textSize="12sp"
                     android:textColor="@color/neutral_900"
                     android:gravity="start|center"
                     android:drawableLeft="@drawable/ic_clock"
-                    android:drawableRight="@drawable/ic_arrow_right"
                     app:iconPadding="10dp"/>
 
                 <LinearLayout
+                    android:id="@+id/layout_open_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -207,21 +221,50 @@
                     android:layout_marginEnd="16dp">
 
                     <TextView
-                        android:id="@+id/tv_day"
+                        android:id="@+id/tv_open_day"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Senin"
+                        android:text="Jam Buka"
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="12sp"/>
 
                     <TextView
-                        android:id="@+id/tv_time"
+                        android:id="@+id/tv_open_time"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="07.00 - 18.00"
+                        android:text="07.00 "
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_close_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginEnd="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_close_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Jam Tutup"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_close_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="17.00 "
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="12sp"/>
@@ -326,8 +369,9 @@
                     android:text="Taman Nasional Kelimutu adalah salah satu tujuan wisata terkenal di Indonesia. Terletak di Pulau Flores, ..."
                     android:fontFamily="@font/poppins_medium"
                     android:textSize="12sp"
+                    android:maxLines="2"
                     android:textColor="@color/black"
-                    android:layout_marginStart="42dp"
+                    android:layout_marginStart="50dp"
                     android:layout_marginEnd="16dp"/>
 
                 <View
