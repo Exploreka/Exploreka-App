@@ -106,8 +106,12 @@ class DetailWisataActivity : AppCompatActivity() {
                     val attraction = response.data
                     binding.apply {
                         tv_touristSpotName.text = attraction?.nameAttraction
+                        tv_description.text = attraction?.descAttraction
+                        tv_open_time.text = attraction?.openHour
+                        tv_close_time.text = attraction?.closeHour
                         if (attraction != null) {
                             lokasiTextView.text = attraction.city?.nameCity
+                            tv_location.text = attraction.city?.nameCity
                         }
                         tv_reviewStar_item.text = attraction?.ratingAvgAttraction.toString()
                         if (attraction != null) {
