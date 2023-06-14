@@ -12,6 +12,7 @@ interface ApiService {
 
     @GET("attractions")
     suspend fun getAttractions(): AttractionResponse
+//    suspend fun searchAttractionsByName(@Query("name") name: String): AttractionResponse
 
     @GET("tour_package")
     suspend fun getTourPackage(): TourPackageResponse
