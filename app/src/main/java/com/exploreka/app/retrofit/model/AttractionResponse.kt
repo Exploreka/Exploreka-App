@@ -10,3 +10,5 @@ data class AttractionResponse(
     @field:SerializedName("data")
     val data: List<ModelAttraction>? = null
 )
+
+

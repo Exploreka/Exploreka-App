@@ -97,29 +97,36 @@ class DetailWisataActivity : AppCompatActivity() {
     }
 
     private fun getData() {
-        val attractionId = intent.getStringExtra("attractionId")
+        val attractionId = intent.getIntExtra("attractionId", 0).toString()
 
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                val response = attractionId?.let { apiService.getAttractionById(it) }
-                if (response != null) {
-                    if (response.status == "Success") {
-                        val attraction = response.data?.firstOrNull()
-                        binding.apply {
-                            tv_touristSpotName.text = attraction?.nameAttraction
-                            tv_reviewStar_item.text = attraction?.descAttraction
+                val response = apiService.getAttractionById(attractionId)
+                if (response.status == "Success") {
+                    val attraction = response.data
+                    binding.apply {
+                        tv_touristSpotName.text = attraction?.nameAttraction
+                        if (attraction != null) {
+                            lokasiTextView.text = attraction.city?.nameCity
                         }
-                    } else {
-                        Toast.makeText(this@DetailWisataActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
+                        tv_reviewStar_item.text = attraction?.ratingAvgAttraction.toString()
+                        if (attraction != null) {
+                            Glide.with(this@DetailWisataActivity)
+                                .load(attraction.photoAttraction)
+                                .into(iv_detail_wisata)
+                        }
                     }
+                } else {
+                    val errorMessage = "Failed to fetch attraction data."
+                    Toast.makeText(this@DetailWisataActivity, errorMessage, Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@DetailWisataActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
-                Log.e("API_FETCH_ERROR", e.toString())
+                val errorMessage = "Failed to fetch attraction data. Please check your internet connection."
+                Toast.makeText(this@DetailWisataActivity, errorMessage, Toast.LENGTH_SHORT).show()
+                Log.e("API_FETCH_ERROR", errorMessage, e)
             }
         }
     }
-
 
 
 
