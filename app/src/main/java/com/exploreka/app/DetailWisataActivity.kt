@@ -3,11 +3,26 @@ package com.exploreka.app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.exploreka.app.databinding.ActivityDetailWisataBinding
+import com.exploreka.app.retrofit.ApiClient
+import com.exploreka.app.retrofit.ApiService
+import com.exploreka.app.retrofit.model.ModelAttraction
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_detail_wisata.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import java.time.OffsetDateTime
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class DetailWisataActivity : AppCompatActivity() {
 
@@ -16,10 +31,17 @@ class DetailWisataActivity : AppCompatActivity() {
     private lateinit var btnFacility: Button
     private lateinit var btnDescription: Button
     private lateinit var btnReview: Button
+    private lateinit var apiService: ApiService
+
+    private val binding: ActivityDetailWisataBinding by lazy {
+        ActivityDetailWisataBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_wisata)
+        setContentView(binding.root)
+
+        apiService = ApiClient.getInstance()
 
         btnLocation = findViewById(R.id.btn_location)
         btnOpeningHours = findViewById(R.id.btn_openingHours)
@@ -62,6 +84,7 @@ class DetailWisataActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        getData()
 
     }
 
@@ -72,4 +95,33 @@ class DetailWisataActivity : AppCompatActivity() {
         dialog.setContentView(view)
         dialog.show()
     }
+
+    private fun getData() {
+        val attractionId = intent.getStringExtra("attractionId")
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val response = attractionId?.let { apiService.getAttractionById(it) }
+                if (response != null) {
+                    if (response.status == "Success") {
+                        val attraction = response.data?.firstOrNull()
+                        binding.apply {
+                            tv_touristSpotName.text = attraction?.nameAttraction
+                            tv_reviewStar_item.text = attraction?.descAttraction
+                        }
+                    } else {
+                        Toast.makeText(this@DetailWisataActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@DetailWisataActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
+                Log.e("API_FETCH_ERROR", e.toString())
+            }
+        }
+    }
+
+
+
+
+
 }

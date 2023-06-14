@@ -24,9 +24,7 @@ import kotlinx.coroutines.launch
 
 class PackageActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var attractionAdapter: AttractionAdapter
     private lateinit var tourpackageAdapter: TourPackageAdapter
-    private lateinit var artikelAdapter: ArtikelAdapter
     private lateinit var apiService: ApiService
     private lateinit var rv_wisata_murah : RecyclerView
     private lateinit var rv_wisata_religi : RecyclerView

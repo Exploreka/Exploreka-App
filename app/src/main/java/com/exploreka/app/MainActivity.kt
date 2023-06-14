@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.data.*
 import com.exploreka.app.retrofit.ApiClient
 import com.exploreka.app.retrofit.ApiService
+import com.exploreka.app.retrofit.model.ModelAttraction
 import com.exploreka.app.ui.*
 import com.exploreka.app.ui.adapter.ArtikelAdapter
 import com.exploreka.app.ui.adapter.AttractionAdapter
@@ -25,7 +26,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 
-class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
+class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
 
     private lateinit var attractionAdapter: AttractionAdapter
@@ -69,6 +70,8 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
 
         rv_destinasi_wisata = findViewById(R.id.rv_destinasi_wisata)
         rv_destinasi_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+
 
         val WisataPopuler = findViewById<TextView>(R.id.tv_wisata_selengkapnya)
         WisataPopuler.setOnClickListener {
@@ -167,6 +170,19 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
                     val attractions = response.data
                     attractionAdapter = attractions?.let { AttractionAdapter(it) }!!
                     rv_destinasi_wisata.adapter = attractionAdapter
+
+                    // Atur click listener item pada adapter
+                    attractionAdapter.setOnItemClickListener(object : AttractionAdapter.OnItemClickListener {
+                        override fun onItemClick(attraction: ModelAttraction) {
+                            // Tangani acara klik item
+                            val intent = Intent(this@MainActivity, DetailWisataActivity::class.java)
+                            // Kirim data yang diperlukan ke DetailWisataActivity menggunakan intent
+                            intent.putExtra("attractionId", attraction.idAttraction)
+                            startActivity(intent)
+                        }
+                    })
+
+                    rv_destinasi_wisata.adapter
                 } else {
                     Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
                         .show()
@@ -221,9 +237,4 @@ class MainActivity : AppCompatActivity(), WisataAdapter.OnItemClickListener {
     }
 
 
-    override fun onItemClick(wisata: Wisata) {
-        val intent = Intent(this, DetailWisataActivity::class.java)
-        intent.putExtra("wisata", wisata)
-        startActivity(intent)
-    }
 }
