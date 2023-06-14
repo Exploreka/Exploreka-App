@@ -25,6 +25,7 @@ interface ApiService {
     @GET("wishlist_tour_package/:id")
     suspend fun getWishlistTourPackage(): List<ModelWishlistTourPakcage>
 
-
+    @GET("attractions/{attractionId}")
+    suspend fun getAttractionById(@Path("attractionId") attractionId: String): AttractionResponse
 
 }

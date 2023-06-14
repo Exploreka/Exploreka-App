@@ -11,8 +11,21 @@ import com.bumptech.glide.request.RequestOptions
 import com.exploreka.app.R
 import com.exploreka.app.retrofit.model.ModelAttraction
 
-class AttractionAdapter(var attractions: List<ModelAttraction>) :
+class AttractionAdapter(private val attractions: List<ModelAttraction>) :
     RecyclerView.Adapter<AttractionAdapter.AttractionViewHolder>() {
+
+    // Definisikan interface listener
+    interface OnItemClickListener {
+        fun onItemClick(attraction: ModelAttraction)
+    }
+
+    // Deklarasikan variabel untuk menyimpan instance listener
+    private var onItemClickListener: OnItemClickListener? = null
+
+    // Metode setter untuk mengatur listener
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        onItemClickListener = listener
+    }
 
     inner class AttractionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val attractionNameTextView: TextView = itemView.findViewById(R.id.tv_title_item)
@@ -20,35 +33,47 @@ class AttractionAdapter(var attractions: List<ModelAttraction>) :
         private val attractionRatingTextView: TextView = itemView.findViewById(R.id.tv_reviewStar_item)
         private val attractionImageView: ImageView = itemView.findViewById(R.id.img_view_item)
 
+        init {
+            // Setel click listener pada item view
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    // Dapatkan objek attraction yang diklik
+                    val attraction = attractions[position]
+                    // Panggil metode onItemClick pada listener
+                    onItemClickListener?.onItemClick(attraction)
+                }
+            }
+        }
+
         fun bind(attraction: ModelAttraction) {
             attractionNameTextView.text = attraction.nameAttraction
             attractionCityTextView.text = attraction.city?.nameCity
             attractionRatingTextView.text = attraction.descAttraction
 
-            // Set rating text if ratingAvgAttraction is not null
+            // Setel teks rating jika ratingAvgAttraction tidak null
             attraction.ratingAvgAttraction?.let { rating ->
                 attractionRatingTextView.text = rating.toString()
             } ?: run {
                 attractionRatingTextView.text = ""
             }
 
-            // Load image using Glide if photoAttraction is not null
+            // Muat gambar menggunakan Glide jika photoAttraction tidak null
             attraction.photoAttraction?.let { photo ->
                 Glide.with(itemView)
-                    .load(photo.toString()) // Convert photo to String if necessary
+                    .load(photo.toString()) // Konversi photo menjadi String jika perlu
                     .apply(RequestOptions().placeholder(R.drawable.karimunjawa))
                     .into(attractionImageView)
             } ?: run {
-                // Set default image if photoAttraction is null
+                // Setel gambar default jika photoAttraction null
                 attractionImageView.setImageResource(R.drawable.ic_baseline_image_24)
             }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AttractionViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_destinasi_populer, parent, false)
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_destinasi_populer, parent, false)
         return AttractionViewHolder(itemView)
     }
 
