@@ -79,6 +79,7 @@ class DetailWisataActivity : AppCompatActivity() {
         btn360.setOnClickListener {
             val intent = Intent(this@DetailWisataActivity, ViewWisataActivity::class.java)
             intent.putExtra("coordinate_attraction", attraction.coordinateAttraction)
+            intent.putExtra("name_attraction", attraction.nameAttraction)
             startActivity(intent)
         }
 
