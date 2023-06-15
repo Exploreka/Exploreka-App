@@ -29,7 +29,6 @@ import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
-
     private lateinit var attractionAdapter: AttractionAdapter
     private lateinit var tourpackageAdapter: TourPackageAdapter
     private lateinit var artikelAdapter: ArtikelAdapter
@@ -37,7 +36,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rv_destinasi_wisata: RecyclerView
     private lateinit var rv_paket_wisata: RecyclerView
     private lateinit var rv_artikel_inspiratif: RecyclerView
-
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,11 +66,43 @@ class MainActivity : AppCompatActivity() {
         }
         rvKategori.layoutManager = layoutManager
 
+        kategoriAdapter.setOnItemClickListener { category ->
+            when (category.categoryId) {
+                1 -> {
+                    // Kategori Budaya
+                    val intent = Intent(this, CategoryBudayaActivity::class.java)
+                    startActivity(intent)
+                }
+                2 -> {
+                    // Kategori Taman Hiburan
+                    val intent = Intent(this, CategoryTamanHiburanActivity::class.java)
+                    startActivity(intent)
+                }
+                3 -> {
+                    // Kategori Cagar Alam
+                    val intent = Intent(this, CategoryCagarAlamActivity::class.java)
+                    startActivity(intent)
+                }
+                4 -> {
+                    // Kategori Bahari
+                    val intent = Intent(this, CategoryBahariActivity::class.java)
+                    startActivity(intent)
+                }
+                5 -> {
+                    // Kategori Tempat Ibadah
+                    val intent = Intent(this, CategoryTempatIbadahActivity::class.java)
+                    startActivity(intent)
+                }
+                6 -> {
+                    // Kategori Pusat Belanja
+                    val intent = Intent(this, CategoryPusatBelanjaActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
 
         rv_destinasi_wisata = findViewById(R.id.rv_destinasi_wisata)
         rv_destinasi_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-
 
         val WisataPopuler = findViewById<TextView>(R.id.tv_wisata_selengkapnya)
         WisataPopuler.setOnClickListener {
@@ -80,7 +110,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DestinasiWisataPopulerActivity::class.java)
             startActivity(intent)
         }
-
 
         rv_paket_wisata = findViewById(R.id.rv_paket_wisata)
         rv_paket_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -91,7 +120,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PaketWisataPopulerActivity::class.java)
             startActivity(intent)
         }
-
 
         rv_artikel_inspiratif = findViewById(R.id.rv_artikel)
         rv_artikel_inspiratif.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -160,10 +188,7 @@ class MainActivity : AppCompatActivity() {
         fetchDataArtikel()
     }
 
-
     private fun fetchDataWisata() {
-        // ...
-
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val response = apiService.getAttractions()
@@ -196,8 +221,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchDataPaket() {
-        // ...
-
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val response = apiService.getTourPackage()
@@ -227,8 +250,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fetchDataArtikel() {
-        // ...
-
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val response = apiService.getArtikel()
@@ -246,6 +267,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
 }
