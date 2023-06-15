@@ -32,4 +32,23 @@ interface ApiService {
     @GET("tour_package/{tourpackageId}")
     suspend fun getTourPackageById(@Path("tourpackageId") tourpackageId: String): DetailTourPackageResponse
 
+    @GET("attractions/cat/1")
+    suspend fun getAttractionsCat1(): AttractionResponse
+
+    @GET("attractions/cat/2")
+    suspend fun getAttractionsCat2(): AttractionResponse
+
+    @GET("attractions/cat/3")
+    suspend fun getAttractionsCat3(): AttractionResponse
+
+    @GET("attractions/cat/4")
+    suspend fun getAttractionsCat4(): AttractionResponse
+
+    @GET("attractions/cat/5")
+    suspend fun getAttractionsCat5(): AttractionResponse
+
+    @GET("attractions/cat/6")
+    suspend fun getAttractionsCat6(): AttractionResponse
+
+
 }
