@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.data.PaketWisata
 import com.exploreka.app.retrofit.ApiClient
 import com.exploreka.app.retrofit.ApiService
+import com.exploreka.app.retrofit.model.ModelTourPackage
 import com.exploreka.app.ui.PaketWisataAdapter
 import com.exploreka.app.ui.adapter.ArtikelAdapter
 import com.exploreka.app.ui.adapter.AttractionAdapter
@@ -130,18 +131,29 @@ class PackageActivity : AppCompatActivity() {
                     val tourpackage = response.data
                     tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
                     rv_wisata_murah.adapter = tourpackageAdapter
+                    tourpackageAdapter.setOnItemClickListener(object : TourPackageAdapter.OnItemClickListener {
+                        override fun onItemClick(tourpackage: ModelTourPackage) {
+                            // Tangani acara klik item
+                            val intent = Intent(this@PackageActivity, DetailPackageActivity::class.java)
+                            intent.putExtra("tourpackageId", tourpackage.idTourPackage.toString() )
+                            startActivity(intent)
+                        }
+                    })
+
+                    rv_wisata_murah.adapter
                 } else {
                     Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
                         .show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
                 Log.e("API_FETCH_ERROR", e.toString())
             }
         }
     }
+
     private fun fetchDataPaketReligi() {
+        // ...
 
         CoroutineScope(Dispatchers.Main).launch {
             try {
@@ -150,17 +162,27 @@ class PackageActivity : AppCompatActivity() {
                     val tourpackage = response.data
                     tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
                     rv_wisata_religi.adapter = tourpackageAdapter
+                    tourpackageAdapter.setOnItemClickListener(object : TourPackageAdapter.OnItemClickListener {
+                        override fun onItemClick(tourpackage: ModelTourPackage) {
+                            // Tangani acara klik item
+                            val intent = Intent(this@PackageActivity, DetailPackageActivity::class.java)
+                            intent.putExtra("tourpackageId", tourpackage.idTourPackage.toString() )
+                            startActivity(intent)
+                        }
+                    })
+
+                    rv_wisata_religi.adapter
                 } else {
                     Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
                         .show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
                 Log.e("API_FETCH_ERROR", e.toString())
             }
         }
     }
+
     private fun fetchDataPaketGunung() {
         // ...
 
@@ -171,13 +193,22 @@ class PackageActivity : AppCompatActivity() {
                     val tourpackage = response.data
                     tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
                     rv_paket_gunung.adapter = tourpackageAdapter
+                    tourpackageAdapter.setOnItemClickListener(object : TourPackageAdapter.OnItemClickListener {
+                        override fun onItemClick(tourpackage: ModelTourPackage) {
+                            // Tangani acara klik item
+                            val intent = Intent(this@PackageActivity, DetailPackageActivity::class.java)
+                            intent.putExtra("tourpackageId", tourpackage.idTourPackage.toString() )
+                            startActivity(intent)
+                        }
+                    })
+
+                    rv_paket_gunung.adapter
                 } else {
                     Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
                         .show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this@PackageActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
                 Log.e("API_FETCH_ERROR", e.toString())
             }
         }

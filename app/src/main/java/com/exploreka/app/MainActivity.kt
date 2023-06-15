@@ -17,6 +17,7 @@ import com.exploreka.app.data.*
 import com.exploreka.app.retrofit.ApiClient
 import com.exploreka.app.retrofit.ApiService
 import com.exploreka.app.retrofit.model.ModelAttraction
+import com.exploreka.app.retrofit.model.ModelTourPackage
 import com.exploreka.app.ui.*
 import com.exploreka.app.ui.adapter.ArtikelAdapter
 import com.exploreka.app.ui.adapter.AttractionAdapter
@@ -227,6 +228,16 @@ class MainActivity : AppCompatActivity() {
                     val tourpackage = response.data
                     tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
                     rv_paket_wisata.adapter = tourpackageAdapter
+                    tourpackageAdapter.setOnItemClickListener(object : TourPackageAdapter.OnItemClickListener {
+                        override fun onItemClick(tourpackage: ModelTourPackage) {
+                            // Tangani acara klik item
+                            val intent = Intent(this@MainActivity, DetailPackageActivity::class.java)
+                            intent.putExtra("tourpackageId", tourpackage.idTourPackage.toString() )
+                            startActivity(intent)
+                        }
+                    })
+
+                    rv_paket_wisata.adapter
                 } else {
                     Toast.makeText(this@MainActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
                         .show()

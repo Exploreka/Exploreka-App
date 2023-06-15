@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailWisataActivity">
+    tools:context=".DetailPackageActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,16 +31,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="204dp">
 
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/viewPager"
+                    <ImageView
+                        android:id="@+id/iv_tour_package"
                         android:layout_width="match_parent"
+                        android:scaleType="centerCrop"
                         android:layout_height="204dp"
-                        android:background="@drawable/kelimutu"/>
-
+                        android:src="@drawable/ic_baseline_image_24"/>
                     <ImageButton
                         android:id="@+id/btn_back"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:src="@drawable/ic_baseline_arrow_back_ios_24"
                         android:backgroundTint="@color/transparan"
                         android:contentDescription="button back"/>
@@ -83,7 +84,7 @@
                             android:id="@+id/tv_package_touristSpotName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Taman Nasional Kelimutu"
+                            android:text="Nama Package"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:fontFamily="@font/poppins_bold"/>
@@ -169,10 +170,10 @@
                     android:textColor="@color/neutral_900"
                     android:gravity="start|center"
                     android:drawableLeft="@drawable/ic_clock"
-                    android:drawableRight="@drawable/ic_arrow_right"
                     app:iconPadding="10dp"/>
 
                 <LinearLayout
+                    android:id="@+id/layout_open_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -180,24 +181,41 @@
                     android:layout_marginEnd="16dp">
 
                     <TextView
-                        android:id="@+id/tv_day"
-                        android:layout_width="0dp"
+                        android:id="@+id/tv_open_day"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Senin"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Buka"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_open_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="07.00"
+                        android:layout_marginStart="180dp"
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="12sp"/>
 
                     <TextView
-                        android:id="@+id/tv_time"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="07.00 - 18.00"
+                        android:text=" - "
                         android:textColor="@color/black"
                         android:fontFamily="@font/poppins_medium"
                         android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_close_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09.00"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="12sp"/>
+
                 </LinearLayout>
 
                 <View
@@ -238,8 +256,11 @@
                     android:text="Taman Nasional Kelimutu adalah salah satu tujuan wisata terkenal di Indonesia. Terletak di Pulau Flores, ..."
                     android:fontFamily="@font/poppins_medium"
                     android:textSize="12sp"
+                    android:maxLines="3"
+                    android:justificationMode="inter_word"
+                    android:ellipsize="end"
                     android:textColor="@color/black"
-                    android:layout_marginStart="42dp"
+                    android:layout_marginStart="50dp"
                     android:layout_marginEnd="16dp"/>
 
                 <View
@@ -307,7 +328,7 @@
                     android:layout_marginHorizontal="16dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_recomend_destination"
+                    android:id="@+id/rv_recomend_package"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -333,7 +354,7 @@
 
         <Button
             style="@style/Widget.Material3.Button"
-            android:id="@+id/btn_360"
+            android:id="@+id/btn_buy_now"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:gravity="center"
