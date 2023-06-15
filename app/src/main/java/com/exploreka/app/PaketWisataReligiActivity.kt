@@ -1,5 +1,6 @@
 package com.exploreka.app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.data.PaketWisata
 import com.exploreka.app.retrofit.ApiClient
 import com.exploreka.app.retrofit.ApiService
+import com.exploreka.app.retrofit.model.ModelTourPackage
 import com.exploreka.app.ui.PaketWisataAdapter
 import com.exploreka.app.ui.adapter.TourPackageAdapter
 import kotlinx.coroutines.CoroutineScope
@@ -42,6 +44,7 @@ class PaketWisataReligiActivity : AppCompatActivity() {
         fetchDataPaketReligi()
     }
     private fun fetchDataPaketReligi() {
+        // ...
 
         CoroutineScope(Dispatchers.Main).launch {
             try {
@@ -50,13 +53,22 @@ class PaketWisataReligiActivity : AppCompatActivity() {
                     val tourpackage = response.data
                     tourpackageAdapter = tourpackage?.let { TourPackageAdapter(it) }!!
                     rv_10_paket_wisata_religi.adapter = tourpackageAdapter
+                    tourpackageAdapter.setOnItemClickListener(object : TourPackageAdapter.OnItemClickListener {
+                        override fun onItemClick(tourpackage: ModelTourPackage) {
+                            // Tangani acara klik item
+                            val intent = Intent(this@PaketWisataReligiActivity, DetailPackageActivity::class.java)
+                            intent.putExtra("tourpackageId", tourpackage.idTourPackage.toString() )
+                            startActivity(intent)
+                        }
+                    })
+
+                    rv_10_paket_wisata_religi.adapter
                 } else {
                     Toast.makeText(this@PaketWisataReligiActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
                         .show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@PaketWisataReligiActivity, "Failed to fetch data", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this@PaketWisataReligiActivity, "Failed to fetch data", Toast.LENGTH_SHORT).show()
                 Log.e("API_FETCH_ERROR", e.toString())
             }
         }

@@ -29,5 +29,7 @@ interface ApiService {
     @GET("attractions/{attractionId}")
     suspend fun getAttractionById(@Path("attractionId") attractionId: String): DetailAttractionResponse
 
+    @GET("tour_package/{tourpackageId}")
+    suspend fun getTourPackageById(@Path("tourpackageId") tourpackageId: String): DetailTourPackageResponse
 
 }
