@@ -1,6 +1,7 @@
 package com.exploreka.app
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.StreetViewPanorama
@@ -11,6 +12,7 @@ import org.json.JSONObject
 
 class ViewWisataActivity : AppCompatActivity(), OnStreetViewPanoramaReadyCallback {
     private lateinit var streetView: StreetViewPanoramaView
+    private lateinit var namaWisataTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,10 +21,13 @@ class ViewWisataActivity : AppCompatActivity(), OnStreetViewPanoramaReadyCallbac
         streetView = findViewById(R.id.street_view)
         streetView.onCreate(savedInstanceState)
         streetView.getStreetViewPanoramaAsync(this)
+
+        namaWisataTextView = findViewById(R.id.nama_wisata)
     }
 
     override fun onStreetViewPanoramaReady(panorama: StreetViewPanorama) {
         val coordinateAttraction = intent.getStringExtra("coordinate_attraction")
+        val nameAttraction = intent.getStringExtra("name_attraction")
 
         if (!coordinateAttraction.isNullOrEmpty()) {
             try {
@@ -33,6 +38,9 @@ class ViewWisataActivity : AppCompatActivity(), OnStreetViewPanoramaReadyCallbac
                 panorama.isStreetNamesEnabled = true
                 panorama.isUserNavigationEnabled = true
                 panorama.setPosition(LatLng(lat, lng))
+
+                namaWisataTextView.text = nameAttraction
+
             } catch (e: JSONException) {
                 e.printStackTrace()
             }
