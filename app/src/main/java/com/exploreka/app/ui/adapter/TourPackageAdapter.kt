@@ -9,16 +9,43 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.exploreka.app.R
+import com.exploreka.app.retrofit.model.ModelAttraction
 import com.exploreka.app.retrofit.model.ModelTourPackage
 
 class TourPackageAdapter(var packagetour: List<ModelTourPackage>) :
     RecyclerView.Adapter<TourPackageAdapter.TourPackageViewHolder>() {
+
+    // Definisikan interface listener
+    interface OnItemClickListener {
+        fun onItemClick(tourpackage: ModelTourPackage)
+    }
+
+    // Deklarasikan variabel untuk menyimpan instance listener
+    private var onItemClickListener: OnItemClickListener? = null
+
+    // Metode setter untuk mengatur listener
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        onItemClickListener = listener
+    }
 
     inner class TourPackageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tourpackageNameTextView: TextView = itemView.findViewById(R.id.tv_title_paket)
         private val tourpackagePriceTextView: TextView = itemView.findViewById(R.id.tv_price_paket)
         private val tourpackageRatingTextView: TextView = itemView.findViewById(R.id.tv_reviewStar_paket)
         private val tourpackageImageView: ImageView = itemView.findViewById(R.id.img_view_paket)
+
+        init {
+            // Setel click listener pada item view
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    // Dapatkan objek attraction yang diklik
+                    val tourpackage = packagetour[position]
+                    // Panggil metode onItemClick pada listener
+                    onItemClickListener?.onItemClick(tourpackage)
+                }
+            }
+        }
 
         fun bind(tourpackage: ModelTourPackage) {
             tourpackageNameTextView.text = tourpackage.nameTourPackage

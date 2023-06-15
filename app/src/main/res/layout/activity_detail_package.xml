@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailWisataActivity">
+    tools:context=".DetailPackageActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                     android:layout_height="204dp">
 
                     <ImageView
-                        android:id="@+id/viewPager"
+                        android:id="@+id/iv_tour_package"
                         android:layout_width="match_parent"
                         android:scaleType="centerCrop"
                         android:layout_height="204dp"
@@ -170,7 +170,6 @@
                     android:textColor="@color/neutral_900"
                     android:gravity="start|center"
                     android:drawableLeft="@drawable/ic_clock"
-                    android:drawableRight="@drawable/ic_arrow_right"
                     app:iconPadding="10dp"/>
 
                 <LinearLayout
@@ -329,7 +328,7 @@
                     android:layout_marginHorizontal="16dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_recomend_destination"
+                    android:id="@+id/rv_recomend_package"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -355,7 +354,7 @@
 
         <Button
             style="@style/Widget.Material3.Button"
-            android:id="@+id/btn_360"
+            android:id="@+id/btn_buy_now"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:gravity="center"
