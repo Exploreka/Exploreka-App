@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.exploreka.app.R
-import com.exploreka.app.data.Category
 import com.exploreka.app.data.Wishlist
 
 class WishlistAdapter(private val wishlist: List<Wishlist>) : RecyclerView.Adapter<WishlistAdapter.ViewHolder>() {

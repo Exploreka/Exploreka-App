@@ -43,7 +43,7 @@ class CategoryAdapter(private val categories: List<Category>) : RecyclerView.Ada
 
         fun bind(category: Category) {
             nameTextView.text = category.name
-            iconView.setImageResource(getIconResource(category.photo))
+            iconView.setImageResource(getIconResource(category.categoryId))
         }
     }
 

@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,6 +16,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Exploreka.Light"
         tools:targetApi="31">
+        <activity
+            android:name=".CategoryPusatBelanjaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryTempatIbadahActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryBahariActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryCagarAlamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryTamanHiburanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryBudayaActivity"
+            android:exported="false" />
         <activity
             android:name=".DetailPackageActivity"
             android:exported="false" />

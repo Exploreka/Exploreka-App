@@ -53,10 +53,6 @@ class DetailWisataActivity : AppCompatActivity() {
             showBottomSheetDialog(R.layout.bottom_sheet_location)
         }
 
-        btnOpeningHours.setOnClickListener {
-            showBottomSheetDialog(R.layout.bottom_sheet_opening_hours)
-        }
-
         btnFacility.setOnClickListener {
             showBottomSheetDialog(R.layout.bottom_sheet_facility)
         }
