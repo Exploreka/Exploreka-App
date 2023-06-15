@@ -98,6 +98,11 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this, CategoryPusatBelanjaActivity::class.java)
                     startActivity(intent)
                 }
+                7 -> {
+                    // Kategori Lainnya
+                    val intent = Intent(this, ComingSoonActivity::class.java)
+                    startActivity(intent)
+                }
             }
         }
 

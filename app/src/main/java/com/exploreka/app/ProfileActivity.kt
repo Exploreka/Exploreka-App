@@ -55,6 +55,18 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val transaction: Button = findViewById(R.id.btn_transaction)
+        transaction.setOnClickListener {
+            val intent = Intent(this@ProfileActivity, ComingSoonActivity::class.java)
+            startActivity(intent)
+        }
+
+        val helpdesk: Button = findViewById(R.id.btn_helpdesk)
+        helpdesk.setOnClickListener {
+            val intent = Intent(this@ProfileActivity, ComingSoonActivity::class.java)
+            startActivity(intent)
+        }
+
         val setting: Button = findViewById(R.id.btn_setting)
         setting.setOnClickListener {
             val intent = Intent(this@ProfileActivity, SettingActivity::class.java)
