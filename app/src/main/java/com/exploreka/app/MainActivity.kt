@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rv_destinasi_wisata: RecyclerView
     private lateinit var rv_paket_wisata: RecyclerView
     private lateinit var rv_artikel_inspiratif: RecyclerView
+    private lateinit var searchView: SearchView
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -191,6 +193,35 @@ class MainActivity : AppCompatActivity() {
         fetchDataWisata()
         fetchDataPaket()
         fetchDataArtikel()
+
+        searchView = findViewById(R.id.searchview_layout)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                // Aksi yang dijalankan saat pengguna menekan tombol "Submit" pada keyboard
+                performSearch(query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                // Aksi yang dijalankan saat teks pencarian berubah
+                // Misalnya, mengupdate daftar hasil pencarian secara real-time
+                updateSearchResults(newText)
+                return true
+            }
+        })
+    }
+
+    private fun performSearch(query: String) {
+        // Logika untuk melakukan pencarian berdasarkan query yang diberikan
+        // Misalnya, melakukan filter pada data atau mengirim permintaan pencarian ke server
+        val intent = Intent(this@MainActivity, SearchActivity::class.java)
+        intent.putExtra("query", query)
+        startActivity(intent)
+    }
+
+    private fun updateSearchResults(newText: String) {
+        // Logika untuk memperbarui daftar hasil pencarian berdasarkan teks baru yang dimasukkan
+        // Misalnya, memfilter daftar data lokal secara real-time
     }
 
     private fun fetchDataWisata() {

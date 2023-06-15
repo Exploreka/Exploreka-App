@@ -126,26 +126,39 @@
                     app:layout_constraintEnd_toEndOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
+<!--            <LinearLayout-->
+<!--                android:id="@+id/searchview_layout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/card_with_radius"-->
+<!--                android:backgroundTint="@color/primary_500"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/profile"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent">-->
+
+<!--                <com.google.android.material.search.SearchBar-->
+<!--                    style="@style/Widget.MaterialComponents.Toolbar.Primary"-->
+<!--                    android:id="@+id/search_bar"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:backgroundTint="@color/neutral_50"-->
+<!--                    android:hint="Jawa tengah"-->
+<!--                    android:contentDescription="search bar"-->
+<!--                    app:navigationIcon="@drawable/ic_filter"/>-->
+<!--            </LinearLayout>-->
+
+            <SearchView
                 android:id="@+id/searchview_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/card_with_radius"
-                android:backgroundTint="@color/primary_500"
+                android:iconifiedByDefault="false"
+                android:queryHint="Cari"
+                android:layout_margin="8dp"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
                 app:layout_constraintTop_toBottomOf="@id/profile"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <com.google.android.material.search.SearchBar
-                    style="@style/Widget.MaterialComponents.Toolbar.Primary"
-                    android:id="@+id/search_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:backgroundTint="@color/neutral_50"
-                    android:hint="Jawa tengah"
-                    android:contentDescription="search bar"
-                    app:navigationIcon="@drawable/ic_filter"/>
-            </LinearLayout>
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container_category"
