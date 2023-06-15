@@ -44,6 +44,16 @@ data class ModelAttraction(
 	val coordinateAttraction: String? = null
 )
 
+data class CoordinateAttraction(
+	@field:SerializedName("lat")
+	val latitude: Double,
+
+	@field:SerializedName("lng")
+	val longitude: Double
+)
+
+
+
 data class City(
 
 	@field:SerializedName("id_province")

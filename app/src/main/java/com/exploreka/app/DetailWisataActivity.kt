@@ -78,6 +78,7 @@ class DetailWisataActivity : AppCompatActivity() {
         val btn360: Button = findViewById(R.id.btn_360)
         btn360.setOnClickListener {
             val intent = Intent(this@DetailWisataActivity, ViewWisataActivity::class.java)
+            intent.putExtra("coordinate_attraction", attraction.coordinateAttraction)
             startActivity(intent)
         }
 
@@ -104,7 +105,7 @@ class DetailWisataActivity : AppCompatActivity() {
             try {
                 val response = apiService.getAttractionById(attractionId)
                 if (response.status == "Success") {
-                    val attraction = response.data
+                    attraction = response.data!! // Inisialisasi variabel attraction
                     binding.apply {
                         tv_touristSpotName.text = attraction?.nameAttraction
                         tv_description.text = attraction?.descAttraction

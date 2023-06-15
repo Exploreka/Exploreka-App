@@ -1,9 +1,13 @@
 package com.exploreka.app
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.gms.maps.*
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.StreetViewPanorama
+import com.google.android.gms.maps.StreetViewPanoramaView
+import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback
+import org.json.JSONException
+import org.json.JSONObject
 
 class ViewWisataActivity : AppCompatActivity(), OnStreetViewPanoramaReadyCallback {
     private lateinit var streetView: StreetViewPanoramaView
@@ -18,12 +22,21 @@ class ViewWisataActivity : AppCompatActivity(), OnStreetViewPanoramaReadyCallbac
     }
 
     override fun onStreetViewPanoramaReady(panorama: StreetViewPanorama) {
-        val latitude = -6.9585233 // Latitude yang diinginkan
-        val longitude = 110.4700825 // Longitude yang diinginkan
+        val coordinateAttraction = intent.getStringExtra("coordinate_attraction")
 
-        panorama.isStreetNamesEnabled = true
-        panorama.isUserNavigationEnabled = true
-        panorama.setPosition(LatLng(latitude, longitude))
+        if (!coordinateAttraction.isNullOrEmpty()) {
+            try {
+                val coordinateObject = JSONObject(coordinateAttraction)
+                val lat = coordinateObject.optDouble("lat", 0.0)
+                val lng = coordinateObject.optDouble("lng", 0.0)
+
+                panorama.isStreetNamesEnabled = true
+                panorama.isUserNavigationEnabled = true
+                panorama.setPosition(LatLng(lat, lng))
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+        }
     }
 
     override fun onResume() {
