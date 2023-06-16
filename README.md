@@ -9,4 +9,13 @@ The Exploreka app is a platform designed to help users find and plan their trave
 
 ## Instal and Run
 
+## Library and Dependency
+1. Retrofit2
+2. Google Maps dan Place
+3. OkHttp3
+4. Glide
+5. CircleImageView
+
+## Minimum Requirement
+The minimum requirement for installing Exploreka SDK is SDK 21 (Android 5.0 Lollipop or higher) on the device.
 
