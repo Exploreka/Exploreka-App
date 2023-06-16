@@ -53,4 +53,9 @@
         <item name="cornerSize">100%</item>
     </style>
 
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColor">@color/neutral_50</item>
+    </style>
+
+
 </resources>

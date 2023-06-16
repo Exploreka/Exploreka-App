@@ -61,7 +61,7 @@
             </androidx.appcompat.widget.Toolbar>
 
             <LinearLayout
-                android:id="@+id/searchview_layout"
+                android:id="@+id/searchview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/card_with_radius"
@@ -90,7 +90,7 @@
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@id/searchview_layout"
+        app:layout_constraintTop_toBottomOf="@id/searchview"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -104,7 +104,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchview_layout"
+        app:layout_constraintTop_toBottomOf="@id/searchview"
         app:layout_constraintLeft_toRightOf="@id/tv_paket_wisata_murah" />
 
     <androidx.recyclerview.widget.RecyclerView

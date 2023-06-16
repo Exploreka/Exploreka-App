@@ -58,18 +58,32 @@
                     android:contentDescription="button help"/>
             </androidx.appcompat.widget.Toolbar>
 
-            <SearchView
+            <LinearLayout
                 android:id="@+id/searchview_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:iconifiedByDefault="false"
-                android:queryHint="Cari"
-                android:layout_margin="8dp"
-                android:imeOptions="actionSearch"
-                android:inputType="text"
+                android:background="@drawable/card_with_radius"
+                android:backgroundTint="@color/primary_500"
                 app:layout_constraintTop_toBottomOf="@id/toolbar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <SearchView
+                    android:id="@+id/searchview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Yuk cari wisata disini"
+                    android:layout_margin="16dp"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:background="@drawable/background_searchview"
+                    android:queryBackground="@color/transparan"
+                    app:searchIcon="@drawable/ic_filter"
+                    app:layout_constraintTop_toBottomOf="@id/profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_search"
@@ -83,7 +97,8 @@
                 android:layout_marginTop="10dp"
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/searchview_layout"
-                app:layout_constraintStart_toStartOf="@id/searchview_layout" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

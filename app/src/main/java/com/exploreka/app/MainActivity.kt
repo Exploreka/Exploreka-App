@@ -44,6 +44,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        searchView = findViewById(R.id.searchview)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                // Aksi yang dijalankan saat pengguna menekan tombol "Submit" pada keyboard
+                performSearch(query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                // Aksi yang dijalankan saat teks pencarian berubah
+                // Misalnya, mengupdate daftar hasil pencarian secara real-time
+                updateSearchResults(newText)
+                return false
+            }
+        })
+
         apiService = ApiClient.getInstance()
 
         val rvKategori: RecyclerView = findViewById(R.id.rv_kategori)
@@ -193,22 +209,6 @@ class MainActivity : AppCompatActivity() {
         fetchDataWisata()
         fetchDataPaket()
         fetchDataArtikel()
-
-        searchView = findViewById(R.id.searchview_layout)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                // Aksi yang dijalankan saat pengguna menekan tombol "Submit" pada keyboard
-                performSearch(query)
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String): Boolean {
-                // Aksi yang dijalankan saat teks pencarian berubah
-                // Misalnya, mengupdate daftar hasil pencarian secara real-time
-                updateSearchResults(newText)
-                return true
-            }
-        })
     }
 
     private fun performSearch(query: String) {

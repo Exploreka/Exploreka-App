@@ -1,16 +1,18 @@
 package com.exploreka.app
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SearchView
 
 class SearchActivity : AppCompatActivity() {
+
+    private lateinit var searchView: SearchView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        searchView = findViewById(R.id.searchview_layout)
+        searchView = findViewById(R.id.searchview)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 // Aksi yang dijalankan saat pengguna menekan tombol "Submit" pada keyboard
@@ -27,18 +29,13 @@ class SearchActivity : AppCompatActivity() {
         })
 
         // Di dalam SearchActivity
-        val searchView: SearchView = findViewById(R.id.searchview_layout)
+        val searchView: SearchView = findViewById(R.id.searchview)
 
         // Ambil data query dari Intent
         val query = intent.getStringExtra("query")
 
         // Set teks query ke SearchView
         searchView.setQuery(query, false)
-
-        // Set focus dan buka keyboard secara otomatis pada SearchView
-        searchView.isIconified = false
-        searchView.requestFocus()
-
     }
 
     private fun performSearch(query: String) {
