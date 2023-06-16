@@ -22,19 +22,6 @@ class ExploreActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val rv_explore : RecyclerView = findViewById(R.id.rv_navigation)
-        val exploreList = listOf(
-            Explore(1, "Karimun Jawa","4.5",),
-            Explore(2, "Kepulauan Togian","4.7"),
-            Explore(3, "Karimun Jawa","4.5"),
-            Explore(4, "Kepulauan Togian","4.5")
-            // Tambahkan kategori lainnya sesuai kebutuhan
-        )
-        val navigationAdapter = NavigationAdapter(exploreList)
-        rv_explore.adapter = navigationAdapter
-        rv_explore.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
-
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->

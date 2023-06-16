@@ -28,13 +28,12 @@
 
     <TextView
         android:id="@+id/categoryName"
-        android:layout_width="56dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:text="Pusat\nBelanja"
         android:fontFamily="@font/poppins_medium"
         android:textSize="12sp"
         android:layout_marginTop="4dp"
-        android:maxLines="2"
         android:ellipsize="end"
         android:gravity="center_horizontal"
         app:layout_constraintTop_toBottomOf="@id/cardView"
