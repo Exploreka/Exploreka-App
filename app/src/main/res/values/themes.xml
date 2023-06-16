@@ -13,6 +13,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/primary_500</item>
         <!-- Customize your theme here. -->
+        <item name="searchViewStyle">@style/SearchViewStyle</item>
     </style>
 
     <style name="ButtonStyle" parent="Widget.AppCompat.Button">

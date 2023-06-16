@@ -63,7 +63,7 @@
             </androidx.appcompat.widget.Toolbar>
 
             <LinearLayout
-                android:id="@+id/searchview_layout"
+                android:id="@+id/searchview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/card_with_radius"
@@ -93,8 +93,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/searchview_layout"
-                app:layout_constraintStart_toStartOf="@id/searchview_layout" />
+                app:layout_constraintTop_toBottomOf="@id/searchview"
+                app:layout_constraintStart_toStartOf="@id/searchview" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

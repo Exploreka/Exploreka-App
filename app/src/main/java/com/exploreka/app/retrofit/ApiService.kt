@@ -1,11 +1,7 @@
 package com.exploreka.app.retrofit
 
-import com.exploreka.app.data.response.login.LoginResponse
-import com.exploreka.app.data.response.main.AttractionsResponse
-import com.exploreka.app.data.response.register.RegisterResponse
 import com.exploreka.app.retrofit.model.*
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
+import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
@@ -50,5 +46,6 @@ interface ApiService {
     @GET("attractions/cat/6")
     suspend fun getAttractionsCat6(): AttractionResponse
 
-
+    @POST("content-based-recommendation")
+    suspend fun searchAttraction(@Body request: ModelInputContentBaseRecommend): Response<ModelResponseContentBaseRecommend>
 }
