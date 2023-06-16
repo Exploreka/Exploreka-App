@@ -20,7 +20,7 @@
         android:id="@+id/tv_reviewer_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aldi taher"
+        android:text="John Doe"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_medium"
         android:textSize="12sp"
@@ -53,7 +53,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nissa Sabyan I Love You So Much"
+        android:text="Wisata sangat bagus dan harga terjangkau"
         android:fontFamily="@font/poppins_medium"
         android:textSize="12sp"
         android:textColor="@color/black"
