@@ -44,171 +44,179 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        searchView = findViewById(R.id.searchview)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                // Aksi yang dijalankan saat pengguna menekan tombol "Submit" pada keyboard
-                performSearch(query)
-                return false
-            }
+        val sharedPrefs = getSharedPreferences("AppPreferences", MODE_PRIVATE)
+        val isFirstRun = sharedPrefs.getBoolean("isFirstRun", true)
 
-            override fun onQueryTextChange(newText: String): Boolean {
-                // Aksi yang dijalankan saat teks pencarian berubah
-                // Misalnya, mengupdate daftar hasil pencarian secara real-time
-                updateSearchResults(newText)
-                return false
-            }
-        })
+        if (isFirstRun) {
+            startActivity(Intent(this, OnboardingActivity::class.java))
+            finish()
+        } else {
+            apiService = ApiClient.getInstance()
 
-        apiService = ApiClient.getInstance()
+            searchView = findViewById(R.id.searchview)
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String): Boolean {
+                    // Aksi yang dijalankan saat pengguna menekan tombol "Submit" pada keyboard
+                    performSearch(query)
+                    return false
+                }
 
-        val rvKategori: RecyclerView = findViewById(R.id.rv_kategori)
-        val categoryList = listOf(
-            Category(1, "Budaya"),
-            Category(2, "Taman Hiburan"),
-            Category(3, "Cagar Alam"),
-            Category(4, "Bahari"),
-            Category(5, "Tempat Ibadah"),
-            Category(6, "Pusat Belanja"),
-            Category(7, "Kategori Lain")
-            // Tambahkan kategori lainnya sesuai kebutuhan
-        )
-        val kategoriAdapter = CategoryAdapter(categoryList)
-        rvKategori.adapter = kategoriAdapter
+                override fun onQueryTextChange(newText: String): Boolean {
+                    // Aksi yang dijalankan saat teks pencarian berubah
+                    // Misalnya, mengupdate daftar hasil pencarian secara real-time
+                    updateSearchResults(newText)
+                    return false
+                }
+            })
 
-        val layoutManager = GridLayoutManager(this, 4)
-        layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-            override fun getSpanSize(position: Int): Int {
-                return 1 // Lebar setiap item adalah 1 kolom
-            }
-        }
-        rvKategori.layoutManager = layoutManager
+            val rvKategori: RecyclerView = findViewById(R.id.rv_kategori)
+            val categoryList = listOf(
+                Category(1, "Budaya"),
+                Category(2, "Taman Hiburan"),
+                Category(3, "Cagar Alam"),
+                Category(4, "Bahari"),
+                Category(5, "Tempat Ibadah"),
+                Category(6, "Pusat Belanja"),
+                Category(7, "Kategori Lain")
+                // Tambahkan kategori lainnya sesuai kebutuhan
+            )
+            val kategoriAdapter = CategoryAdapter(categoryList)
+            rvKategori.adapter = kategoriAdapter
 
-        kategoriAdapter.setOnItemClickListener { category ->
-            when (category.categoryId) {
-                1 -> {
-                    // Kategori Budaya
-                    val intent = Intent(this, CategoryBudayaActivity::class.java)
-                    startActivity(intent)
-                }
-                2 -> {
-                    // Kategori Taman Hiburan
-                    val intent = Intent(this, CategoryTamanHiburanActivity::class.java)
-                    startActivity(intent)
-                }
-                3 -> {
-                    // Kategori Cagar Alam
-                    val intent = Intent(this, CategoryCagarAlamActivity::class.java)
-                    startActivity(intent)
-                }
-                4 -> {
-                    // Kategori Bahari
-                    val intent = Intent(this, CategoryBahariActivity::class.java)
-                    startActivity(intent)
-                }
-                5 -> {
-                    // Kategori Tempat Ibadah
-                    val intent = Intent(this, CategoryTempatIbadahActivity::class.java)
-                    startActivity(intent)
-                }
-                6 -> {
-                    // Kategori Pusat Belanja
-                    val intent = Intent(this, CategoryPusatBelanjaActivity::class.java)
-                    startActivity(intent)
-                }
-                7 -> {
-                    // Kategori Lainnya
-                    val intent = Intent(this, ComingSoonActivity::class.java)
-                    startActivity(intent)
+            val layoutManager = GridLayoutManager(this, 4)
+            layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                override fun getSpanSize(position: Int): Int {
+                    return 1 // Lebar setiap item adalah 1 kolom
                 }
             }
-        }
+            rvKategori.layoutManager = layoutManager
 
-        rv_destinasi_wisata = findViewById(R.id.rv_destinasi_wisata)
-        rv_destinasi_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-        val WisataPopuler = findViewById<TextView>(R.id.tv_wisata_selengkapnya)
-        WisataPopuler.setOnClickListener {
-            // Intent ke aktivitas lain
-            val intent = Intent(this, DestinasiWisataPopulerActivity::class.java)
-            startActivity(intent)
-        }
-
-        rv_paket_wisata = findViewById(R.id.rv_paket_wisata)
-        rv_paket_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-        val PaketPopuler = findViewById<TextView>(R.id.tv_paket_selengkapnya)
-        PaketPopuler.setOnClickListener {
-            // Intent ke aktivitas lain
-            val intent = Intent(this, PaketWisataPopulerActivity::class.java)
-            startActivity(intent)
-        }
-
-        rv_artikel_inspiratif = findViewById(R.id.rv_artikel)
-        rv_artikel_inspiratif.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-        val ArtikelPopuler = findViewById<TextView>(R.id.tv_artikel_selengkapnya)
-        ArtikelPopuler.setOnClickListener {
-            // Intent ke aktivitas lain
-            val intent = Intent(this, ArtikelActivity::class.java)
-            startActivity(intent)
-        }
-
-
-        val notif: ImageView = findViewById(R.id.notification_button)
-        notif.setOnClickListener {
-            val intent = Intent(this@MainActivity, NotificationActivity::class.java)
-            startActivity(intent)
-        }
-
-        val help: ImageView = findViewById(R.id.help_button)
-        help.setOnClickListener {
-            val intent = Intent(this@MainActivity, HelpCenterActivity::class.java)
-            startActivity(intent)
-        }
-
-        val fab: FloatingActionButton = findViewById(R.id.floating_action_button)
-        fab.setOnClickListener {
-            val intent = Intent(this@MainActivity, ExploreActivity::class.java)
-            startActivity(intent)
-        }
-
-        val dss: Button = findViewById(R.id.btn_dss)
-        dss.setOnClickListener {
-            val intent = Intent(this@MainActivity, DssActivity::class.java)
-            startActivity(intent)
-        }
-
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigationView.selectedItemId = R.id.menu_home
-        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.menu_home -> {
-                    menuItem.setIcon(R.drawable.bottom_nav_home_selector)
-                    true
+            kategoriAdapter.setOnItemClickListener { category ->
+                when (category.categoryId) {
+                    1 -> {
+                        // Kategori Budaya
+                        val intent = Intent(this, CategoryBudayaActivity::class.java)
+                        startActivity(intent)
+                    }
+                    2 -> {
+                        // Kategori Taman Hiburan
+                        val intent = Intent(this, CategoryTamanHiburanActivity::class.java)
+                        startActivity(intent)
+                    }
+                    3 -> {
+                        // Kategori Cagar Alam
+                        val intent = Intent(this, CategoryCagarAlamActivity::class.java)
+                        startActivity(intent)
+                    }
+                    4 -> {
+                        // Kategori Bahari
+                        val intent = Intent(this, CategoryBahariActivity::class.java)
+                        startActivity(intent)
+                    }
+                    5 -> {
+                        // Kategori Tempat Ibadah
+                        val intent = Intent(this, CategoryTempatIbadahActivity::class.java)
+                        startActivity(intent)
+                    }
+                    6 -> {
+                        // Kategori Pusat Belanja
+                        val intent = Intent(this, CategoryPusatBelanjaActivity::class.java)
+                        startActivity(intent)
+                    }
+                    7 -> {
+                        // Kategori Lainnya
+                        val intent = Intent(this, ComingSoonActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
-                R.id.menu_package -> {
-                    menuItem.setIcon(R.drawable.bottom_nav_package_selector)
-                    startActivity(Intent(this, PackageActivity::class.java))
-                    true
-                }
-                R.id.menu_wishlist -> {
-                    menuItem.setIcon(R.drawable.bottom_nav_wishlist_selector)
-                    startActivity(Intent(this, WishlistActivity::class.java))
-                    true
-                }
-                R.id.menu_profile -> {
-                    menuItem.setIcon(R.drawable.bottom_nav_profile_selector)
-                    startActivity(Intent(this, ProfileActivity::class.java))
-                    true
-                }
-                else -> false
             }
-        }
 
-        fetchDataWisata()
-        fetchDataPaket()
-        fetchDataArtikel()
+            rv_destinasi_wisata = findViewById(R.id.rv_destinasi_wisata)
+            rv_destinasi_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+            val WisataPopuler = findViewById<TextView>(R.id.tv_wisata_selengkapnya)
+            WisataPopuler.setOnClickListener {
+                // Intent ke aktivitas lain
+                val intent = Intent(this, DestinasiWisataPopulerActivity::class.java)
+                startActivity(intent)
+            }
+
+            rv_paket_wisata = findViewById(R.id.rv_paket_wisata)
+            rv_paket_wisata.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+            val PaketPopuler = findViewById<TextView>(R.id.tv_paket_selengkapnya)
+            PaketPopuler.setOnClickListener {
+                // Intent ke aktivitas lain
+                val intent = Intent(this, PaketWisataPopulerActivity::class.java)
+                startActivity(intent)
+            }
+
+            rv_artikel_inspiratif = findViewById(R.id.rv_artikel)
+            rv_artikel_inspiratif.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+            val ArtikelPopuler = findViewById<TextView>(R.id.tv_artikel_selengkapnya)
+            ArtikelPopuler.setOnClickListener {
+                // Intent ke aktivitas lain
+                val intent = Intent(this, ArtikelActivity::class.java)
+                startActivity(intent)
+            }
+
+
+            val notif: ImageView = findViewById(R.id.notification_button)
+            notif.setOnClickListener {
+                val intent = Intent(this@MainActivity, NotificationActivity::class.java)
+                startActivity(intent)
+            }
+
+            val help: ImageView = findViewById(R.id.help_button)
+            help.setOnClickListener {
+                val intent = Intent(this@MainActivity, HelpCenterActivity::class.java)
+                startActivity(intent)
+            }
+
+            val fab: FloatingActionButton = findViewById(R.id.floating_action_button)
+            fab.setOnClickListener {
+                val intent = Intent(this@MainActivity, ExploreActivity::class.java)
+                startActivity(intent)
+            }
+
+            val dss: Button = findViewById(R.id.btn_dss)
+            dss.setOnClickListener {
+                val intent = Intent(this@MainActivity, DssActivity::class.java)
+                startActivity(intent)
+            }
+
+            bottomNavigationView = findViewById(R.id.bottom_navigation)
+            bottomNavigationView.selectedItemId = R.id.menu_home
+            bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.menu_home -> {
+                        menuItem.setIcon(R.drawable.bottom_nav_home_selector)
+                        true
+                    }
+                    R.id.menu_package -> {
+                        menuItem.setIcon(R.drawable.bottom_nav_package_selector)
+                        startActivity(Intent(this, PackageActivity::class.java))
+                        true
+                    }
+                    R.id.menu_wishlist -> {
+                        menuItem.setIcon(R.drawable.bottom_nav_wishlist_selector)
+                        startActivity(Intent(this, WishlistActivity::class.java))
+                        true
+                    }
+                    R.id.menu_profile -> {
+                        menuItem.setIcon(R.drawable.bottom_nav_profile_selector)
+                        startActivity(Intent(this, ProfileActivity::class.java))
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            fetchDataWisata()
+            fetchDataPaket()
+            fetchDataArtikel()
+        }
     }
 
     private fun performSearch(query: String) {
