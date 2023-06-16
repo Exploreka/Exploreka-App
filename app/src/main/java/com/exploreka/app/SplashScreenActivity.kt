@@ -18,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
         val imageView: ImageView = findViewById(R.id.splash)
 
         imageView.postDelayed({
-            val intent = Intent(this, OnboardingActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }, SPLASH_DELAY)

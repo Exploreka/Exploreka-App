@@ -21,6 +21,9 @@ class OnboardingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding)
 
+        val sharedPrefs = getSharedPreferences("AppPreferences", MODE_PRIVATE)
+        sharedPrefs.edit().putBoolean("isFirstRun", false).apply()
+
         slideViewPager = findViewById(R.id.slideViewPager)
         nextBtn = findViewById(R.id.btn_next)
         skipBtn = findViewById(R.id.btn_skip)
