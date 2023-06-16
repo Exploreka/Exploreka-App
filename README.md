@@ -10,9 +10,10 @@ The Exploreka app is a platform designed to help users find and plan their trave
 
 ## Instal and Run
 1. Clone this repository 
-<div class="scrollable-text">
-Teks yang bisa digeser.
-</div>
+```
+npm run build
+npm run dev
+```
 
 
 2. 
