@@ -58,7 +58,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,21 +66,21 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_price_paket"
                 app:layout_constraintStart_toStartOf="parent">
 
+                <include
+                    layout="@layout/layout_star_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/tv_reviewStar_paket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4.9"
+                    android:layout_marginStart="5dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/poppins"
                     android:textSize="9sp"
                     android:includeFontPadding="false"/>
-
-                <include
-                    layout="@layout/layout_star_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"/>
 
                 <TextView
                     android:id="@+id/jumlah_ulasan_paket"

@@ -29,22 +29,25 @@
         android:layout_height="wrap_content"
         android:src="@drawable/view_icon"
         android:layout_marginBottom="30dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
         android:id="@+id/nama_wisata"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Karimun Jawa"
+        android:text="Taman Mini Indonesia Indah "
+        android:maxLines="1"
+        android:ellipsize="end"
         android:layout_marginBottom="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginEnd="20dp"
         android:textColor="@color/primary_500"
         android:fontFamily="@font/poppins_bold"
         android:textSize="21sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/iv_360"/>
+        app:layout_constraintLeft_toRightOf="@id/iv_360" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
