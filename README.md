@@ -26,3 +26,6 @@ The Exploreka app is a platform designed to help users find and plan their trave
 ## Minimum Requirement
 The minimum requirement for installing Exploreka SDK is SDK 21 (Android 5.0 Lollipop or higher) on the device.
 
+## Demo Video
+Demo Video of Exploreka [Here](https://youtu.be/5erraEm4838)
+
