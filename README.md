@@ -1,4 +1,4 @@
-# Exploreka APK
+# Exploreka App
 ![icon exploreka](https://github.com/Exploreka/Exploreka-App/assets/96515927/7f920e32-a302-43a6-977b-deae583d341a)
 
 
@@ -9,6 +9,12 @@ The Exploreka app is a platform designed to help users find and plan their trave
 ## UI of Exploreka
 
 ## Instal and Run
+1. Clone this repository 
+<p align="center">
+  <a href="https://www.example.com/" target="_blank">Klik di sini untuk tautan</a>
+</p>
+
+2. 
 
 ## Library and Dependency
 1. Retrofit2
