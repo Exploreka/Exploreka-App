@@ -1,5 +1,6 @@
-# Exploreka
-<img width="640" alt="exploreka" src="https://github.com/Exploreka/Exploreka-App/assets/96515927/85123b52-7125-43b2-90a9-e4b1a9397296">
+# Exploreka APK
+![icon exploreka](https://github.com/Exploreka/Exploreka-App/assets/96515927/7f920e32-a302-43a6-977b-deae583d341a)
+
 
 
 ## General Info
