@@ -58,12 +58,10 @@
                     android:layout_gravity="end"
                     android:padding="10dp"
                     app:tint="@color/neutral_50" />
-
-
             </androidx.appcompat.widget.Toolbar>
 
             <LinearLayout
-                android:id="@+id/searchview"
+                android:id="@+id/searchview_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/card_with_radius"
@@ -72,14 +70,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-                <com.google.android.material.search.SearchBar
-                    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                <SearchView
+                    android:id="@+id/searchview"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="Jawa tengah"
-                    android:contentDescription="search bar"
-                    android:backgroundTint="@color/neutral_50"
-                    app:navigationIcon="@drawable/ic_filter"/>
+                    android:layout_height="wrap_content"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Yuk cari wisata disini"
+                    android:layout_margin="16dp"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:background="@drawable/background_searchview"
+                    android:queryBackground="@color/transparan"
+                    app:searchIcon="@drawable/ic_filter"
+                    app:layout_constraintTop_toBottomOf="@id/profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -93,10 +98,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/searchview"
-                app:layout_constraintStart_toStartOf="@id/searchview" />
-
-
+                app:layout_constraintTop_toBottomOf="@id/searchview_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
