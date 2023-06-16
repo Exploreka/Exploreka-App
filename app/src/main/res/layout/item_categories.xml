@@ -30,7 +30,7 @@
         android:id="@+id/categoryName"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:text="Pusat\nBelanja"
+        android:text="Kategori\nLain"
         android:fontFamily="@font/poppins_medium"
         android:textSize="12sp"
         android:layout_marginTop="4dp"
