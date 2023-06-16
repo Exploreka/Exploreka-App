@@ -87,7 +87,7 @@
                     android:id="@+id/jumlah_ulasan_paket"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="(4051)"
+                    android:text="(NA)"
                     android:textColor="@color/black"
                     android:fontFamily="@font/poppins"
                     android:textSize="8sp"
