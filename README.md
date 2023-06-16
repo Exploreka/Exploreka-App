@@ -9,7 +9,7 @@ The Exploreka app is a platform designed to help users find and plan their trave
   ```
   https://github.com/Exploreka/Exploreka-App.git
   ```
-•  Download APK [Here]([https://drive.google.com/file/d/1U4X0iMlg4owWNFG3eBamjHc1nu9RwGMf/view?usp=sharing](https://storage.googleapis.com/exploreka/MD/Exploreka.apk))
+•  Download APK [Here](https://storage.googleapis.com/exploreka/MD/Exploreka.apk)
 
 
 ## Library and Dependency
