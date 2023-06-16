@@ -1,11 +1,10 @@
-# Heading level 1
+# Exploreka
 
-## Heading level 2
 
-### Heading level 3
+## General Info
 
-#### Heading level 4
+## UI of Exploreka
 
-##### Heading level 5
+## Instal and Run
 
-###### Heading level 6
+
