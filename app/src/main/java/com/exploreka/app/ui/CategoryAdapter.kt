@@ -53,8 +53,8 @@ class CategoryAdapter(private val categories: List<Category>) : RecyclerView.Ada
             2 -> R.drawable.kategori_taman_hiburan
             3 -> R.drawable.kategori_cagar_alam
             4 -> R.drawable.kategori_bahari
-            5 -> R.drawable.kategori_pusat_perbelanjaan
-            6 -> R.drawable.kategori_tempat_ibadah
+            5 -> R.drawable.kategori_tempat_ibadah
+            6 -> R.drawable.kategori_pusat_perbelanjaan
             else -> R.drawable.kategori_lain
         }
     }
